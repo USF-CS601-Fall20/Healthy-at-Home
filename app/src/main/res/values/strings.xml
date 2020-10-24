@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+
+    <!-- Strings related to home screen -->
+    <color name="powderBlue">#B0E0E6</color>
+    <string name="inspirationalQuote">\Stay healthy at home\</string>
+    <string name="quoteIntro"> <u>Quarantine health tip of the day:</u> </string>
+
+
 </resources>
