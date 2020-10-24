@@ -8,7 +8,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/quoteIntro"
+        android:id="@+id/tipIntro"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_alignLeft="@id/changingText"
@@ -19,7 +19,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:text="@string/quoteIntro"
+        android:text="@string/tipIntro"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/changingText"
@@ -48,13 +48,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.72"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteIntro" />
+        app:layout_constraintTop_toBottomOf="@+id/tipIntro" />
 
     <Button
         android:id="@+id/quoteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="56dp"
         android:text="New Quote"
         app:layout_constraintBottom_toTopOf="@+id/healthyHouse"
         app:layout_constraintEnd_toEndOf="parent"
