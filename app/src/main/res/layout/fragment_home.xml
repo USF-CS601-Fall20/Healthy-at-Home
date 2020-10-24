@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/powderBlue"
+    android:background="@color/skyBlue"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
@@ -54,22 +54,23 @@
         android:id="@+id/quoteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:text="New Quote"
+        android:layout_marginBottom="132dp"
+        android:text="New Tip"
         app:layout_constraintBottom_toTopOf="@+id/healthyHouse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/healthyHouse"
-        android:layout_width="371dp"
-        android:layout_height="252dp"
+        android:layout_width="236dp"
+        android:layout_height="202dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="136dp"
         android:layout_marginBottom="13dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/quoteButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changingText"
         app:srcCompat="@drawable/healthy_house" />
