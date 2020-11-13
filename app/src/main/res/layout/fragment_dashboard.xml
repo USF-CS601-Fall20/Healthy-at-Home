@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <FrameLayout
+        android:id="@+id/content_frame_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <TextView
         android:id="@+id/text_dashboard"
         android:layout_width="match_parent"

@@ -16,7 +16,7 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         // inflate layout
-        View view = inflater.inflate(R.layout.fragment_notifications, container, false);
+        View view = inflater.inflate(R.layout.fragment_categories, container, false);
 
         // Abs
         Button buttonAbs = (Button)view.findViewById(R.id.absButton);
@@ -48,7 +48,8 @@ public class CategoryFragment extends Fragment {
                 Fragment fragment = new Cardio();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+//                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(R.id.fragment_container, fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
