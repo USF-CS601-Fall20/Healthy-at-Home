@@ -1,31 +1,26 @@
-package com.example.healthyathome.ui.notifications;
+package com.example.healthyathome.ui.categories;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.healthyathome.Abs;
-import com.example.healthyathome.Biceps;
+import com.example.healthyathome.Arms;
 import com.example.healthyathome.Cardio;
 import com.example.healthyathome.Chest;
-import com.example.healthyathome.Quads;
+import com.example.healthyathome.Legs;
 import com.example.healthyathome.R;
 import com.example.healthyathome.Shoulders;
 
-public class NotificationsFragment extends Fragment {
+public class CategoriesFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private CategoriesViewModel categoriesViewModel;
 
 //    public View onCreateView(@NonNull LayoutInflater inflater,
 //                             ViewGroup container, Bundle savedInstanceState) {
@@ -62,12 +57,12 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-        // Biceps
-        Button buttonBiceps = (Button)view.findViewById(R.id.bicepsButton);
+        // Arms
+        Button buttonBiceps = (Button)view.findViewById(R.id.armsButton);
         buttonBiceps.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Biceps();
+                Fragment fragment = new Arms();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
                 fTransaction.replace(R.id.content_frame_categories, fragment);
@@ -104,12 +99,12 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-        // Quads
-        Button buttonQuads = (Button)view.findViewById(R.id.quadsButton);
+        // Legs
+        Button buttonQuads = (Button)view.findViewById(R.id.legsButton);
         buttonQuads.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Fragment fragment = new Quads();
+                Fragment fragment = new Legs();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
                 fTransaction.replace(R.id.content_frame_categories, fragment);

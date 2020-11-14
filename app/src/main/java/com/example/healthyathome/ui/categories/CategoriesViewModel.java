@@ -1,16 +1,16 @@
-package com.example.healthyathome.ui.notifications;
+package com.example.healthyathome.ui.categories;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class CategoriesViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public CategoriesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Notifications fragment");
+        mText.setValue("Categories fragment");
     }
 
     public LiveData<String> getText() {

@@ -53,10 +53,10 @@
         android:text="CHEST"
         app:layout_constraintEnd_toStartOf="@+id/shoulderButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bicepsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/armsButton" />
 
     <Button
-        android:id="@+id/bicepsButton"
+        android:id="@+id/armsButton"
         android:layout_width="134dp"
         android:layout_height="64dp"
         android:layout_marginStart="40dp"
@@ -65,14 +65,14 @@
         android:layout_marginEnd="7dp"
         android:layout_marginRight="7dp"
         android:background="@color/Cyan"
-        android:text="BICEPS"
+        android:text="ARMS"
         app:layout_constraintEnd_toStartOf="@+id/cardioButton"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/quadsButton"
+        android:id="@+id/legsButton"
         android:layout_width="134dp"
         android:layout_height="64dp"
         android:layout_marginStart="40dp"
@@ -82,7 +82,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/Cyan"
-        android:text="QUADS"
+        android:text="LEGS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/absButton"
         app:layout_constraintHorizontal_bias="0.482"
