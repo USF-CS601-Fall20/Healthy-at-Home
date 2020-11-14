@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
         CategoryFragment categoryFragment = new CategoryFragment();
-        loadFragment(categoryFragment);
+//        loadFragment(categoryFragment);
     }
 
     public boolean loadFragment(Fragment fragment) {
