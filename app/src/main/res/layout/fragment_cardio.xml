@@ -7,6 +7,11 @@
     android:background="@color/skyBlue"
     tools:context=".ui.home.HomeFragment">
 
+    <FrameLayout
+        android:id="@+id/content_frame_cardio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 
     <ImageView
         android:id="@+id/cardioImage"

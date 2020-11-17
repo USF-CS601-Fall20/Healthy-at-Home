@@ -1,4 +1,4 @@
-package com.example.healthyathome.ui.dashboard;
+package com.example.healthyathome.ui.progress;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.healthyathome.R;
 
-public class DashboardFragment extends Fragment {
+public class ProgressFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private ProgressViewModel progressViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        progressViewModel =
+                new ViewModelProvider(this).get(ProgressViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_progress, container, false);
+        final TextView textView = root.findViewById(R.id.text_progress);
+        progressViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -38,7 +39,7 @@ public class CategoriesFragment extends Fragment {
 //    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         // inflate layout
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
@@ -51,7 +52,8 @@ public class CategoriesFragment extends Fragment {
                 Fragment fragment = new Abs();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+//                fTransaction.replace(R.id.content_frame_categories, fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }

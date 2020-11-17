@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/skyBlue">
 
+    <FrameLayout
+        android:id="@+id/content_frame_legs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ImageView
         android:id="@+id/legsImage"
         android:layout_width="236dp"

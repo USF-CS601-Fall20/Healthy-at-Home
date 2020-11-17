@@ -1,16 +1,16 @@
-package com.example.healthyathome.ui.dashboard;
+package com.example.healthyathome.ui.progress;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class ProgressViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public ProgressViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Dashboard fragment");
+        mText.setValue("Progress fragment");
     }
 
     public LiveData<String> getText() {
