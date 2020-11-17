@@ -132,5 +132,11 @@
         <item>test</item>
     </string-array>
 
+    <!-- Shoulder Exercises -->
+    <string-array name="shoulderExercises">
+        <item>Dumbbell Shoulder Press</item>
+        <item>test</item>
+    </string-array>
+
 
 </resources>
