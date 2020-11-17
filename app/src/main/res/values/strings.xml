@@ -108,6 +108,12 @@
         <item>test</item>
     </string-array>
 
+    <!-- Arm Exercises -->
+    <string-array name="armExercises">
+        <item>Bicep Curl</item>
+        <item>test</item>
+    </string-array>
+
     <!-- Leg Exercises -->
     <string-array name="legExercises">
         <item>Squats</item>

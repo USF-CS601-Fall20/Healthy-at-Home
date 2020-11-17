@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <!-- Arms Image -->
     <ImageView
-        android:id="@+id/bicepsImage"
+        android:id="@+id/armsImage"
         android:layout_width="236dp"
         android:layout_height="202dp"
         android:layout_centerHorizontal="true"
@@ -26,18 +27,151 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arms" />
 
+    <!-- Abs Header Text -->
     <TextView
         android:id="@+id/armsText"
-        android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="384dp"
-        android:gravity="center"
+        android:layout_width="109dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="127dp"
         android:text="Arms"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Exercise Choice -->
+    <Spinner
+        android:id="@+id/exercises"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:entries="@array/armExercises"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Weight Choice -->
+    <Spinner
+        android:id="@+id/weight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:entries="@array/weights"
+        app:layout_constraintBottom_toTopOf="@+id/reps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercises" />
+
+    <!-- Reps Choice -->
+    <Spinner
+        android:id="@+id/reps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:entries="@array/reps"
+        app:layout_constraintBottom_toTopOf="@+id/sets"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight" />
+
+    <!-- Sets Choice -->
+    <Spinner
+        android:id="@+id/sets"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="130dp"
+        android:entries="@array/sets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reps" />
+
+    <!-- Weight Text -->
+    <EditText
+        android:id="@+id/weightText"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="281dp"
+        android:layout_marginBottom="9dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Weight"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/repsText"
+        app:layout_constraintEnd_toEndOf="@+id/repsText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/repsText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Reps Text -->
+    <EditText
+        android:id="@+id/repsText"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Reps"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/setsText"
+        app:layout_constraintEnd_toEndOf="@+id/setsText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/setsText"
+        app:layout_constraintTop_toBottomOf="@+id/weightText" />
+
+    <!-- Sets Text -->
+    <EditText
+        android:id="@+id/setsText"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Sets"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/armsEntryButton"
+        app:layout_constraintEnd_toEndOf="@+id/sets"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toStartOf="@+id/sets"
+        app:layout_constraintTop_toBottomOf="@+id/repsText" />
+
+    <!-- Submit Entry Button -->
+    <Button
+        android:id="@+id/armsEntryButton"
+        android:layout_width="152dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="49dp"
+        android:background="@color/powderBlue"
+        android:text="Submit Entry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sets"
+        app:layout_constraintVertical_bias="0.869" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
