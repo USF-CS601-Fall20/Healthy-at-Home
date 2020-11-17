@@ -120,6 +120,12 @@
         <item>test</item>
     </string-array>
 
+    <!-- Chest Exercises -->
+    <string-array name="chestExercises">
+        <item>Dumbbell Bench</item>
+        <item>test</item>
+    </string-array>
+
     <!-- Leg Exercises -->
     <string-array name="legExercises">
         <item>Squats</item>

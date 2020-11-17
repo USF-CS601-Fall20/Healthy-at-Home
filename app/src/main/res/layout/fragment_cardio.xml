@@ -30,7 +30,7 @@
 
     <!-- Cardio Header Text -->
     <TextView
-        android:id="@+id/armsText"
+        android:id="@+id/cardioText"
         android:layout_width="109dp"
         android:layout_height="0dp"
         android:layout_marginTop="74dp"
