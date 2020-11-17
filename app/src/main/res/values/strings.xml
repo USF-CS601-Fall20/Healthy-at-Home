@@ -114,6 +114,12 @@
         <item>test</item>
     </string-array>
 
+    <!-- Cardio Exercises -->
+    <string-array name="cardioExercises">
+        <item>Laps</item>
+        <item>test</item>
+    </string-array>
+
     <!-- Leg Exercises -->
     <string-array name="legExercises">
         <item>Squats</item>
