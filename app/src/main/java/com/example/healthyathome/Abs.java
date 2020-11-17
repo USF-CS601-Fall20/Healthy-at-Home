@@ -11,13 +11,6 @@ public class Abs extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-
-//        dashboardViewModel =
-//                new ViewModelProvider(this).get(DashboardViewModel.class);
-
-
-
-
         View view = inflater.inflate(R.layout.fragment_abs, container, false);
         return view;
     }
