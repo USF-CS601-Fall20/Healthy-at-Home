@@ -148,7 +148,7 @@
         android:inputType="textPersonName"
         android:text="Sets"
         android:enabled="false"
-        app:layout_constraintBottom_toTopOf="@+id/legEntryButton"
+        app:layout_constraintBottom_toTopOf="@+id/legsEntryButton"
         app:layout_constraintEnd_toEndOf="@+id/sets"
         app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="@+id/sets"
@@ -156,7 +156,7 @@
 
     <!-- Submit Entry Button -->
     <Button
-        android:id="@+id/legEntryButton"
+        android:id="@+id/legsEntryButton"
         android:layout_width="152dp"
         android:layout_height="51dp"
         android:layout_marginStart="116dp"

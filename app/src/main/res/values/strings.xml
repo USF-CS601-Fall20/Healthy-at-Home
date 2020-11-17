@@ -101,9 +101,16 @@
         <item>10</item>
     </string-array>
 
+
+    <!-- Abdominal Exercises -->
+    <string-array name="abdominalExercises">
+        <item>Crunches</item>
+        <item>test</item>
+    </string-array>
+
     <!-- Leg Exercises -->
     <string-array name="legExercises">
-        <item>Squat</item>
+        <item>Squats</item>
         <item>test</item>
     </string-array>
 
