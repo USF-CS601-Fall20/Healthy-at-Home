@@ -18,8 +18,9 @@
     <color name="Cyan">#00eeff</color>
 
 
-    <!-- Weights array -->
+    <!-- Weights -->
     <string-array name="weights">
+        <item>10</item>
         <item>15</item>
         <item>20</item>
         <item>25</item>
@@ -71,7 +72,7 @@
     </string-array>
 
 
-    <!-- Reps array -->
+    <!-- Reps -->
     <string-array name="reps">
         <item>1</item>
         <item>2</item>
@@ -86,7 +87,7 @@
     </string-array>
 
 
-    <!-- Sets array -->
+    <!-- Sets -->
     <string-array name="sets">
         <item>1</item>
         <item>2</item>
@@ -98,6 +99,12 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+    </string-array>
+
+    <!-- Leg Exercises -->
+    <string-array name="legExercises">
+        <item>Squat</item>
+        <item>test</item>
     </string-array>
 
 
