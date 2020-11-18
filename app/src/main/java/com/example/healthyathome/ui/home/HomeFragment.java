@@ -18,18 +18,35 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
+//    public View onCreateView(@NonNull LayoutInflater inflater,
+//                             ViewGroup container, Bundle savedInstanceState) {
+//        homeViewModel =
+//                new ViewModelProvider(this).get(HomeViewModel.class);
+//        View root = inflater.inflate(R.layout.fragment_home, container, false);
+//        final TextView textView = root.findViewById(R.id.changingText);
+//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
+//        return root;
+//    }
+
+    private String[] healthTips = new String[]{
+            "Stay healthy at home!",
+            "Drink water, stay hydrated.",
+            "Eat plenty of fruits and vegetables.",
+            "Make time for a walk/run every day.",
+            "Wash your hands at least 5 times a day",
+            "Get plenty of sleep."
+    };
+
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.changingText);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
     }
 }
