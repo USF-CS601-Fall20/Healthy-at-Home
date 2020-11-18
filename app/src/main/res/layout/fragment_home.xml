@@ -80,34 +80,39 @@
     <!-- Categories Button -->
     <Button
         android:id="@+id/categoriesButton"
-        android:layout_width="138dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="136dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:includeFontPadding="false"
         android:text="Categories"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/healthyHouse" />
 
     <!-- Progress Button -->
     <Button
         android:id="@+id/progressButton"
-        android:layout_width="138dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="132dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:text="Progress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/categoriesButton"
         app:layout_constraintTop_toBottomOf="@+id/healthyHouse" />
 
     <!-- Categories Image -->
     <ImageView
         android:id="@+id/categoriesImage"
-        android:layout_width="59dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginEnd="280dp"
         android:layout_marginRight="280dp"
         android:src="@drawable/categories"
@@ -119,13 +124,44 @@
     <!-- Progress Image -->
     <ImageView
         android:id="@+id/progressImage"
-        android:layout_width="59dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
         android:src="@drawable/progress"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/categoriesImage"
-        app:layout_constraintTop_toBottomOf="@+id/progressButton" />
+        app:layout_constraintTop_toBottomOf="@+id/progressButton"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <!-- Calories Button -->
+    <Button
+        android:id="@+id/caloriesButton"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:text="Calories"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/progressButton"
+        app:layout_constraintTop_toBottomOf="@+id/healthyHouse"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <!-- Calories Image -->
+    <ImageView
+        android:id="@+id/caloriesImage"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/calories"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toEndOf="@+id/progressImage"
+        app:layout_constraintTop_toBottomOf="@+id/caloriesButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- Logout Button -->
     <Button

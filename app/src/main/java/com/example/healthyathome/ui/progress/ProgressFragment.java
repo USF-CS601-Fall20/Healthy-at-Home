@@ -25,7 +25,7 @@ public class ProgressFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        container.removeAllViews();
+//        container.removeAllViews();
         View view = inflater.inflate(R.layout.fragment_progress, container, false);
 
         // Home button
