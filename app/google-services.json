@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "63009637089",
+    "firebase_url": "https://healthyathome-78042.firebaseio.com",
+    "project_id": "healthyathome-78042",
+    "storage_bucket": "healthyathome-78042.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63009637089:android:d957316741a4dcec22ada0",
+        "android_client_info": {
+          "package_name": "com.example.healthyathome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63009637089-ada2oe4it015736s9r518sd4otmud95b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcO3ZVmt8xWlaGQWVFQHmW4ZUDLWIIUWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63009637089-ada2oe4it015736s9r518sd4otmud95b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

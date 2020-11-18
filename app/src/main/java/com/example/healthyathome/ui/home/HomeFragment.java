@@ -1,5 +1,6 @@
 package com.example.healthyathome.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.healthyathome.ArmsFragment;
+import com.example.healthyathome.LoginActivity;
 import com.example.healthyathome.R;
 import com.example.healthyathome.ui.categories.CategoriesFragment;
 import com.example.healthyathome.ui.progress.ProgressFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Random;
 

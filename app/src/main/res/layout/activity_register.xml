@@ -78,6 +78,21 @@
         app:layout_constraintTop_toBottomOf="@+id/emailCreateText"
         app:layout_constraintVertical_bias="0.093" />
 
+    <!-- Phone Text -->
+    <EditText
+        android:id="@+id/phoneCreateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Phone"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passCreateText"
+        app:layout_constraintVertical_bias="0.128" />
+
     <!-- Register Button -->
     <Button
         android:id="@+id/registerButton"
@@ -87,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passCreateText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneCreateText"
         app:layout_constraintVertical_bias="0.255" />
 
     <!-- Skip Registration Button -->
@@ -102,4 +117,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerButton"
         app:layout_constraintVertical_bias="0.658" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

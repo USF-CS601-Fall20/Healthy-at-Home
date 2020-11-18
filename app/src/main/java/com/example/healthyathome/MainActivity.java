@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.example.healthyathome.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new HomeFragment());
     }
 
+    // Load particular fragment
     public boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
@@ -42,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
         return false;
+    }
+
+    // Logout and return to login page
+    public void logout(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
     }
 
 }
