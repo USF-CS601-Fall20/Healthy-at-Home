@@ -17,6 +17,7 @@
             app:srcCompat="@drawable/ic_home_black_24dp" />
     </FrameLayout>
 
+    <!-- Categories Text -->
     <TextView
         android:id="@+id/text_categories"
         android:layout_width="match_parent"
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.074" />
 
+    <!-- Shoulder Button -->
     <Button
         android:id="@+id/shoulderButton"
         android:layout_width="134dp"
@@ -47,6 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardioButton" />
 
+    <!-- Chest Button -->
     <Button
         android:id="@+id/chestButton"
         android:layout_width="134dp"
@@ -62,6 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/armsButton" />
 
+    <!-- Arms Button -->
     <Button
         android:id="@+id/armsButton"
         android:layout_width="134dp"
@@ -78,6 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Legs Button -->
     <Button
         android:id="@+id/legsButton"
         android:layout_width="134dp"
@@ -97,6 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/chestButton"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Abs Button -->
     <Button
         android:id="@+id/absButton"
         android:layout_width="133dp"
@@ -112,6 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/shoulderButton"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Cardio Button -->
     <Button
         android:id="@+id/cardioButton"
         android:layout_width="134dp"
