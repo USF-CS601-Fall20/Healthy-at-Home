@@ -9,14 +9,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.example.healthyathome.ArmsFragment;
 import com.example.healthyathome.R;
+import com.example.healthyathome.ui.categories.CategoriesFragment;
 
 import java.util.Random;
 
 public class HomeFragment extends Fragment {
-
-    private HomeViewModel homeViewModel;
 
     private String[] healthTips = new String[]{
             "Stay healthy at home!",
@@ -31,6 +33,8 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+//        container.removeAllViews();
+
         TextView tipText = (TextView) view.findViewById(R.id.tipText);
         Button tipButton = (Button) view.findViewById(R.id.tipButton);
 
@@ -44,6 +48,21 @@ public class HomeFragment extends Fragment {
                 tipText.setText(healthTips[healthTipsIndex]);
             }
         });
+
+
+        Button categoriesButton = (Button) view.findViewById(R.id.categoriesButton);
+        categoriesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new CategoriesFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
 
         return view;
     }

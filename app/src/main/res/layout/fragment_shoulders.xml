@@ -9,7 +9,14 @@
     <FrameLayout
         android:id="@+id/content_frame_shoulders"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_home_black_24dp" />
+    </FrameLayout>
 
     <!-- Shoulder Image -->
     <ImageView

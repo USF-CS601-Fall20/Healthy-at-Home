@@ -21,25 +21,10 @@ import com.example.healthyathome.ShouldersFragment;
 
 public class CategoriesFragment extends Fragment {
 
-    private CategoriesViewModel categoriesViewModel;
-
-//    public View onCreateView(@NonNull LayoutInflater inflater,
-//                             ViewGroup container, Bundle savedInstanceState) {
-//        notificationsViewModel =
-//                new ViewModelProvider(this).get(NotificationsViewModel.class);
-//        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-//        final TextView textView = root.findViewById(R.id.text_notifications);
-//        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-//        return root;
-//    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+        container.removeAllViews();
 
         // inflate layout
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
@@ -53,7 +38,6 @@ public class CategoriesFragment extends Fragment {
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
                 fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
-//                fTransaction.replace(R.id.content_frame_categories, fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
@@ -67,7 +51,7 @@ public class CategoriesFragment extends Fragment {
                 Fragment fragment = new ArmsFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
@@ -81,7 +65,7 @@ public class CategoriesFragment extends Fragment {
                 Fragment fragment = new CardioFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
@@ -95,7 +79,7 @@ public class CategoriesFragment extends Fragment {
                 Fragment fragment = new ChestFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
@@ -109,7 +93,7 @@ public class CategoriesFragment extends Fragment {
                 Fragment fragment = new LegsFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
@@ -123,7 +107,7 @@ public class CategoriesFragment extends Fragment {
                 Fragment fragment = new ShouldersFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
-                fTransaction.replace(R.id.content_frame_categories, fragment);
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
