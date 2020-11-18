@@ -20,6 +20,7 @@ public class ArmsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_arms, container, false);
 
 
+        // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override

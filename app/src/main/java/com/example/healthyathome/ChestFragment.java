@@ -18,6 +18,7 @@ public class ChestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_chest, container, false);
 
+        // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -30,8 +31,6 @@ public class ChestFragment extends Fragment {
                 fTransaction.commit();
             }
         });
-
-
 
         return view;
     }

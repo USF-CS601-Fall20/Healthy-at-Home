@@ -7,6 +7,7 @@
     android:background="@color/skyBlue"
     tools:context=".ui.home.HomeFragment">
 
+    <!-- Intro Text -->
     <TextView
         android:id="@+id/tipIntro"
         android:layout_width="wrap_content"
@@ -27,6 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Tip Text -->
     <TextView
         android:id="@+id/tipText"
         android:layout_width="323dp"
@@ -50,6 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tipIntro" />
 
+    <!-- Tip Button -->
     <Button
         android:id="@+id/tipButton"
         android:layout_width="wrap_content"
@@ -60,6 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- House Image -->
     <ImageView
         android:id="@+id/healthyHouse"
         android:layout_width="236dp"
@@ -73,17 +77,54 @@
         app:layout_constraintTop_toBottomOf="@+id/tipText"
         app:srcCompat="@drawable/healthy_house" />
 
+    <!-- Categories Button -->
+
+    <!-- Progress Button -->
     <Button
         android:id="@+id/categoriesButton"
-        android:layout_width="164dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="135dp"
+        android:layout_width="138dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
         android:text="Categories"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/healthyHouse" />
+
+    <!-- Categories Image -->
+    <Button
+        android:id="@+id/progressButton"
+        android:layout_width="138dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:text="Progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/healthyHouse" />
+
+    <ImageView
+        android:id="@+id/categoriesImage"
+        android:layout_width="59dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginRight="280dp"
+        android:src="@drawable/categories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoriesButton" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="59dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:src="@drawable/progress"
+        app:layout_constraintStart_toEndOf="@+id/categoriesImage"
+        app:layout_constraintTop_toBottomOf="@+id/progressButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

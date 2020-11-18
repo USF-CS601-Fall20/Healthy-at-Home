@@ -21,6 +21,7 @@ public class AbsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_abs, container, false);
 
 
+        // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override

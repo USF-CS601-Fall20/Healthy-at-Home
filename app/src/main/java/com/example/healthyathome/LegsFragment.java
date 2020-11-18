@@ -18,6 +18,7 @@ public class LegsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_legs, container, false);
 
+        // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -30,7 +31,6 @@ public class LegsFragment extends Fragment {
                 fTransaction.commit();
             }
         });
-
 
         return view;
     }

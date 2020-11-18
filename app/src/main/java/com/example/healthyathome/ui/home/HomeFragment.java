@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.healthyathome.ArmsFragment;
 import com.example.healthyathome.R;
 import com.example.healthyathome.ui.categories.CategoriesFragment;
+import com.example.healthyathome.ui.progress.ProgressFragment;
 
 import java.util.Random;
 
@@ -37,8 +38,6 @@ public class HomeFragment extends Fragment {
 
         TextView tipText = (TextView) view.findViewById(R.id.tipText);
         Button tipButton = (Button) view.findViewById(R.id.tipButton);
-
-
         tipButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -55,6 +54,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment fragment = new CategoriesFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
+        Button progressButton = (Button) view.findViewById(R.id.progressButton);
+        progressButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new ProgressFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
                 fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);

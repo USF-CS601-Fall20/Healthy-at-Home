@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ import com.example.healthyathome.ChestFragment;
 import com.example.healthyathome.LegsFragment;
 import com.example.healthyathome.R;
 import com.example.healthyathome.ShouldersFragment;
+import com.example.healthyathome.ui.home.HomeFragment;
 
 public class CategoriesFragment extends Fragment {
 
@@ -28,6 +30,20 @@ public class CategoriesFragment extends Fragment {
 
         // inflate layout
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
+
+        // Home button
+        ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new HomeFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
 
         // Abs
         Button buttonAbs = (Button)view.findViewById(R.id.absButton);
