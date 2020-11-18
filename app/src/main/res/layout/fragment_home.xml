@@ -78,8 +78,6 @@
         app:srcCompat="@drawable/healthy_house" />
 
     <!-- Categories Button -->
-
-    <!-- Progress Button -->
     <Button
         android:id="@+id/categoriesButton"
         android:layout_width="138dp"
@@ -91,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/healthyHouse" />
 
-    <!-- Categories Image -->
+    <!-- Progress Button -->
     <Button
         android:id="@+id/progressButton"
         android:layout_width="138dp"
@@ -103,6 +101,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/healthyHouse" />
 
+    <!-- Categories Image -->
     <ImageView
         android:id="@+id/categoriesImage"
         android:layout_width="59dp"
@@ -117,8 +116,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoriesButton" />
 
+    <!-- Progress Image -->
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/progressImage"
         android:layout_width="59dp"
         android:layout_height="53dp"
         android:layout_marginStart="132dp"
