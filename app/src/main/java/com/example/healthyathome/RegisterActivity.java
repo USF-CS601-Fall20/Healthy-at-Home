@@ -93,15 +93,141 @@ public class RegisterActivity extends AppCompatActivity {
                             userMap.put("email", email);
                             userMap.put("phone", phoneNumber);
                             userMap.put("calories", "0");
+
                             documentReference.set(userMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d("TAG", "onSuccess: user profile is crated for " + userID);
+                                    Log.d("TAG", "success: user profile created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.d("TAG", "onFailure: " + e.toString());
+                                    Log.d("TAG", "failure: " + e.toString());
+                                }
+                            });
+
+                            // Abs exercise database
+                            documentReference = firebaseFirestore.collection("users")
+                                    .document(userID).collection("workouts")
+                                    .document("abs");
+                            Map<String, Object> absMap = new HashMap<>();
+                            absMap.put("plank", "0");
+                            absMap.put("reverseCrunches", "0");
+                            absMap.put("russianTwist", "0");
+                            documentReference.set(absMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "success: abs data created for " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "failure: " + e.toString());
+                                }
+                            });
+
+                            // Arms exercise database
+                            documentReference = firebaseFirestore.collection("users")
+                                    .document(userID).collection("workouts")
+                                    .document("arms");
+                            Map<String, Object> armsMap = new HashMap<>();
+                            armsMap.put("bicepCurl", "0");
+                            armsMap.put("wristCurl", "0");
+                            armsMap.put("tricepsKickback", "0");
+                            armsMap.put("lateralRaise", "0");
+                            documentReference.set(armsMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "success: arms data created for " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "failure: " + e.toString());
+                                }
+                            });
+
+                            // Cardio exercise database
+                            documentReference = firebaseFirestore.collection("users")
+                                    .document(userID).collection("workouts")
+                                    .document("cardio");
+                            Map<String, Object> cardioMap = new HashMap<>();
+                            cardioMap.put("walk", "0");
+                            cardioMap.put("jog", "0");
+                            cardioMap.put("run", "0");
+                            cardioMap.put("sprint", "0");
+                            documentReference.set(cardioMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "success: cardio data created for " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "failure: " + e.toString());
+                                }
+                            });
+
+                            // Chest exercise database
+                            documentReference = firebaseFirestore.collection("users")
+                                    .document(userID).collection("workouts")
+                                    .document("chest");
+                            Map<String, Object> chestMap = new HashMap<>();
+                            chestMap.put("bench", "0");
+                            chestMap.put("bridge", "0");
+                            chestMap.put("lateralClimber", "0");
+                            chestMap.put("pushup", "0");
+                            documentReference.set(chestMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "success: chest data created for " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "failure: " + e.toString());
+                                }
+                            });
+
+                            // Legs exercise database
+                            documentReference = firebaseFirestore.collection("users")
+                                    .document(userID).collection("workouts")
+                                    .document("legs");
+                            Map<String, Object> legsMap = new HashMap<>();
+                            legsMap.put("calfRaise", "0");
+                            legsMap.put("gluteBridge", "0");
+                            legsMap.put("lunges", "0");
+                            legsMap.put("squats", "0");
+                            documentReference.set(legsMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "success: legs data created for " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "failure: " + e.toString());
+                                }
+                            });
+
+                            // Shoulder exercise database
+                            documentReference = firebaseFirestore.collection("users")
+                                    .document(userID).collection("workouts")
+                                    .document("shoulders");
+                            Map<String, Object> shouldersMap = new HashMap<>();
+                            shouldersMap.put("deltoidRaise", "0");
+                            shouldersMap.put("frontRaise", "0");
+                            shouldersMap.put("shoulderPress", "0");
+                            shouldersMap.put("uprightRow", "0");
+                            documentReference.set(shouldersMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("TAG", "success: shoulder data created for " + userID);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("TAG", "failure: " + e.toString());
                                 }
                             });
 
