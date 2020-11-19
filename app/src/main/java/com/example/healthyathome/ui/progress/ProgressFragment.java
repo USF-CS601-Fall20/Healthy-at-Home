@@ -28,6 +28,9 @@ public class ProgressFragment extends Fragment {
     private TextView absTotalCount;
     private TextView armsTotalCount;
     private TextView cardioTotalCount;
+    private TextView chestTotalCount;
+    private TextView legsTotalCount;
+    private TextView shouldersTotalCount;
     private TextView userName, email, phoneNumber, progUserID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -38,9 +41,14 @@ public class ProgressFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_progress, container, false);
+
         absTotalCount = view.findViewById(R.id.absTotalText);
         armsTotalCount = view.findViewById(R.id.armsTotalText);
         cardioTotalCount = view.findViewById(R.id.cardioTotalText);
+        chestTotalCount = view.findViewById(R.id.chestTotalText);
+        legsTotalCount = view.findViewById(R.id.legsTotalText);
+        shouldersTotalCount = view.findViewById(R.id.shouldersTotalText);
+
         userName = view.findViewById(R.id.usernameProgText);
         email = view.findViewById(R.id.emailProgText);
         phoneNumber = view.findViewById(R.id.phoneProgText);
@@ -90,6 +98,36 @@ public class ProgressFragment extends Fragment {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 cardioTotalCount.setText(value.getString("total"));
+            }
+        });
+
+        // Populate chest data
+        documentReference = firebaseFirestore.collection("users")
+                .document(userID).collection("workouts").document("chest");
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                chestTotalCount.setText(value.getString("total"));
+            }
+        });
+
+        // Populate legs data
+        documentReference = firebaseFirestore.collection("users")
+                .document(userID).collection("workouts").document("legs");
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                legsTotalCount.setText(value.getString("total"));
+            }
+        });
+
+        // Populate shoulders data
+        documentReference = firebaseFirestore.collection("users")
+                .document(userID).collection("workouts").document("shoulders");
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                shouldersTotalCount.setText(value.getString("total"));
             }
         });
 

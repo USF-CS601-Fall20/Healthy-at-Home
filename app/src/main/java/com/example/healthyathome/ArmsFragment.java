@@ -40,7 +40,7 @@ public class ArmsFragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         userID = firebaseAuth.getCurrentUser().getUid();
 
-        // Setup user's abs data
+        // Setup user's arms data
         DocumentReference documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("arms");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {

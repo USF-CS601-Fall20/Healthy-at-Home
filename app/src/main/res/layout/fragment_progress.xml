@@ -102,10 +102,11 @@
         android:id="@+id/idProgText"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="84dp"
         android:text="UserID"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Abs Progress Text -->
@@ -126,7 +127,7 @@
         android:id="@+id/absTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AbsTotal"
+        android:text="absTotal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.101"
@@ -182,6 +183,84 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751" />
+
+    <!-- Chest Progress Text -->
+    <TextView
+        android:id="@+id/chestProgText"
+        android:layout_width="45dp"
+        android:layout_height="18dp"
+        android:text="Chest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <!-- Chest Total Updating Text -->
+    <TextView
+        android:id="@+id/chestTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="chestTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
+
+    <!-- Legs Progress Text -->
+    <TextView
+        android:id="@+id/legsProgText"
+        android:layout_width="45dp"
+        android:layout_height="18dp"
+        android:text="Legs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <!-- Legs Total Updating Text -->
+    <TextView
+        android:id="@+id/legsTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="legsTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <!-- Shoulders Progress Text -->
+    <TextView
+        android:id="@+id/shouldersProgText"
+        android:layout_width="65dp"
+        android:layout_height="18dp"
+        android:text="Shoulders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704" />
+
+    <!-- Shoulders Total Updating Text -->
+    <TextView
+        android:id="@+id/shouldersTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shouldersTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.669"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751" />

@@ -20,9 +20,6 @@
         app:srcCompat="@drawable/ic_home_black_24dp" />
 
     <!-- Shoulder Image -->
-
-    <!-- Exercise Choice -->
-
     <ImageView
         android:id="@+id/shouldersImage"
         android:layout_width="220dp"
@@ -39,8 +36,9 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/shoulders" />
 
+    <!-- Exercise Choice -->
     <Spinner
-        android:id="@+id/exercises"
+        android:id="@+id/shoulderExerciseSpinner"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="54dp"
@@ -68,7 +66,7 @@
         app:layout_constraintBottom_toTopOf="@+id/reps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercises" />
+        app:layout_constraintTop_toBottomOf="@+id/shoulderExerciseSpinner" />
 
     <!-- Reps Choice -->
     <Spinner
