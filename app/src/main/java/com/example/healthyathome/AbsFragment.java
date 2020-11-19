@@ -26,9 +26,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class AbsFragment extends Fragment {
 
+    private int crunchesCount;
+    private int plankCount;
+    private int reverseCrunchesCount;
+    private int russianTwistCount;
     private int totalCount;
-    private Spinner absSpinner;
+
+    private String crunchesCountString;
+    private String plankCountString;
+    private String reverseCrunchesCountString;
+    private String russianTwistCountString;
     private String totalCountString;
+
+    private Spinner absSpinner;
     private String userID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -48,6 +58,18 @@ public class AbsFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                crunchesCountString = value.getString("crunches");
+                crunchesCount = Integer.parseInt(crunchesCountString);
+
+                plankCountString = value.getString("plank");
+                plankCount = Integer.parseInt(plankCountString);
+
+                reverseCrunchesCountString = value.getString("reverseCrunches");
+                reverseCrunchesCount = Integer.parseInt(reverseCrunchesCountString);
+
+                russianTwistCountString = value.getString("russianTwist");
+                russianTwistCount = Integer.parseInt(russianTwistCountString);
+
                 totalCountString = value.getString("total");
                 totalCount = Integer.parseInt(totalCountString);
             }
@@ -58,12 +80,32 @@ public class AbsFragment extends Fragment {
         submitAbs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String selectedExercise = absSpinner.getSelectedItem().toString();
-                totalCount++;
-                totalCountString = String.valueOf(totalCount);
-
                 DocumentReference documentReference = firebaseFirestore.collection("users")
                         .document(userID).collection("workouts").document("abs");
+
+                String selectedExercise = absSpinner.getSelectedItem().toString();
+
+                if (selectedExercise.equals("Crunches")){
+                    crunchesCount++;
+                    crunchesCountString = String.valueOf(crunchesCount);
+                    documentReference.update("crunches", crunchesCountString);
+                }else if (selectedExercise.equals("Plank")){
+                    plankCount++;
+                    plankCountString = String.valueOf(plankCount);
+                    documentReference.update("plank", plankCountString);
+                }else if (selectedExercise.equals("Reverse Crunches")){
+                    reverseCrunchesCount++;
+                    reverseCrunchesCountString = String.valueOf(reverseCrunchesCount);
+                    documentReference.update("reverseCrunches", reverseCrunchesCountString);
+                }
+                else if (selectedExercise.equals("Russian Twist")){
+                    russianTwistCount++;
+                    russianTwistCountString = String.valueOf(russianTwistCount);
+                    documentReference.update("russianTwist", russianTwistCountString);
+                }
+
+                totalCount++;
+                totalCountString = String.valueOf(totalCount);
                 documentReference.update("total", totalCountString);
                 Toast.makeText(getActivity().getBaseContext(), "Abs Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }

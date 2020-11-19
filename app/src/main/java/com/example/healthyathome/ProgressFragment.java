@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.healthyathome.AbsFragment;
 import com.example.healthyathome.R;
 import com.example.healthyathome.HomeFragment;
+import com.example.healthyathome.stats.StatsAbsFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -128,6 +129,22 @@ public class ProgressFragment extends Fragment {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 shouldersTotalCount.setText(value.getString("total"));
+            }
+        });
+
+
+
+        // Abs Stats Button
+        ImageButton absProgButton = (ImageButton) view.findViewById(R.id.absProgButton);
+        absProgButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                StatsAbsFragment fragment = new StatsAbsFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
             }
         });
 

@@ -112,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document("abs");
                             Map<String, Object> absMap = new HashMap<>();
                             absMap.put("total", "0");
+                            absMap.put("crunches", "0");
                             absMap.put("plank", "0");
                             absMap.put("reverseCrunches", "0");
                             absMap.put("russianTwist", "0");
