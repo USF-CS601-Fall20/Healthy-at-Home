@@ -26,8 +26,6 @@ public class CategoriesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-        container.removeAllViews();
-
         // inflate layout
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
 

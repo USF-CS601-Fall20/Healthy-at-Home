@@ -65,7 +65,18 @@ public class CaloriesFragment extends Fragment{
 
                 DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
                 documentReference.update("calories", calorieString);
-                Toast.makeText(getActivity().getBaseContext(), "Submitted!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getBaseContext(), "Calories Submitted!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Reset Calories Button
+        Button resetCalories = (Button) view.findViewById(R.id.resetCalButton);
+        resetCalories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+                documentReference.update("calories", "0");
+                Toast.makeText(getActivity().getBaseContext(), "Calories Reset!", Toast.LENGTH_SHORT).show();
             }
         });
 
