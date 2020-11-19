@@ -12,12 +12,10 @@
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_home_black_24dp" />
 
     <!-- Progress Text -->
@@ -102,35 +100,36 @@
         android:id="@+id/idProgText"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="56dp"
         android:text="UserID"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Abs Progress Text -->
     <TextView
         android:id="@+id/absProgText"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
+        android:layout_width="90dp"
+        android:layout_height="25dp"
         android:text="Abs"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <!-- Abs Total Updating Text -->
     <TextView
         android:id="@+id/absTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="absTotal"
+        android:text="000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.566" />
@@ -138,25 +137,26 @@
     <!-- Arms Progress Text -->
     <TextView
         android:id="@+id/armsProgText"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
+        android:layout_width="90dp"
+        android:layout_height="25dp"
         android:text="Arms"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.611" />
 
     <!-- Arms Total Updating Text -->
     <TextView
         android:id="@+id/armsTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="armsTotal"
+        android:text="000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.66" />
@@ -164,25 +164,26 @@
     <!-- Cardio Progress Text -->
     <TextView
         android:id="@+id/cardioProgText"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
+        android:layout_width="90dp"
+        android:layout_height="25dp"
         android:text="Cardio"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704" />
+        app:layout_constraintVertical_bias="0.702" />
 
     <!-- Cardio Total Updating Text -->
     <TextView
         android:id="@+id/cardioTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cardioTotal"
+        android:text="000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751" />
@@ -190,25 +191,26 @@
     <!-- Chest Progress Text -->
     <TextView
         android:id="@+id/chestProgText"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
+        android:layout_width="90dp"
+        android:layout_height="25dp"
         android:text="Chest"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <!-- Chest Total Updating Text -->
     <TextView
         android:id="@+id/chestTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="chestTotal"
+        android:text="000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.566" />
@@ -216,25 +218,26 @@
     <!-- Legs Progress Text -->
     <TextView
         android:id="@+id/legsProgText"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
+        android:layout_width="90dp"
+        android:layout_height="25dp"
         android:text="Legs"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.611" />
 
     <!-- Legs Total Updating Text -->
     <TextView
         android:id="@+id/legsTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="legsTotal"
+        android:text="000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.66" />
@@ -242,27 +245,124 @@
     <!-- Shoulders Progress Text -->
     <TextView
         android:id="@+id/shouldersProgText"
-        android:layout_width="65dp"
-        android:layout_height="18dp"
+        android:layout_width="90dp"
+        android:layout_height="25dp"
         android:text="Shoulders"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704" />
+        app:layout_constraintVertical_bias="0.702" />
 
     <!-- Shoulders Total Updating Text -->
     <TextView
         android:id="@+id/shouldersTotalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="shouldersTotal"
+        android:text="000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.669"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751" />
+
+    <!-- Abs Progress Button -->
+    <ImageButton
+        android:id="@+id/absProgButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/skyBlue"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <!-- Arms Progress Button -->
+    <ImageButton
+        android:id="@+id/armsProgButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/skyBlue"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <!-- Cardio Progress Button -->
+    <ImageButton
+        android:id="@+id/cardioProgButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/skyBlue"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729" />
+
+    <!-- Chest Progress Button -->
+    <ImageButton
+        android:id="@+id/chestProgButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/skyBlue"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <!-- Legs Progress Button -->
+    <ImageButton
+        android:id="@+id/legsProgButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/skyBlue"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <!-- Shoulders Progress Button -->
+    <ImageButton
+        android:id="@+id/shouldersProgButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@color/skyBlue"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.729" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
