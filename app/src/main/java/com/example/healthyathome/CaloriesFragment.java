@@ -49,8 +49,8 @@ public class CaloriesFragment extends Fragment{
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 calorieString = value.getString("calories");
-                calorieCount.setText(calorieString);
                 calories = Integer.parseInt(calorieString);
+                calorieCount.setText(calorieString);
             }
         });
 

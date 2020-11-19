@@ -111,6 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document(userID).collection("workouts")
                                     .document("abs");
                             Map<String, Object> absMap = new HashMap<>();
+                            absMap.put("total", "0");
                             absMap.put("plank", "0");
                             absMap.put("reverseCrunches", "0");
                             absMap.put("russianTwist", "0");
@@ -131,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document(userID).collection("workouts")
                                     .document("arms");
                             Map<String, Object> armsMap = new HashMap<>();
+                            armsMap.put("total", "0");
                             armsMap.put("bicepCurl", "0");
                             armsMap.put("wristCurl", "0");
                             armsMap.put("tricepsKickback", "0");
@@ -152,6 +154,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document(userID).collection("workouts")
                                     .document("cardio");
                             Map<String, Object> cardioMap = new HashMap<>();
+                            cardioMap.put("total", "0");
                             cardioMap.put("walk", "0");
                             cardioMap.put("jog", "0");
                             cardioMap.put("run", "0");
@@ -173,6 +176,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document(userID).collection("workouts")
                                     .document("chest");
                             Map<String, Object> chestMap = new HashMap<>();
+                            chestMap.put("total", "0");
                             chestMap.put("bench", "0");
                             chestMap.put("bridge", "0");
                             chestMap.put("lateralClimber", "0");
@@ -194,6 +198,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document(userID).collection("workouts")
                                     .document("legs");
                             Map<String, Object> legsMap = new HashMap<>();
+                            legsMap.put("total", "0");
                             legsMap.put("calfRaise", "0");
                             legsMap.put("gluteBridge", "0");
                             legsMap.put("lunges", "0");
@@ -215,6 +220,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .document(userID).collection("workouts")
                                     .document("shoulders");
                             Map<String, Object> shouldersMap = new HashMap<>();
+                            shouldersMap.put("total", "0");
                             shouldersMap.put("deltoidRaise", "0");
                             shouldersMap.put("frontRaise", "0");
                             shouldersMap.put("shoulderPress", "0");

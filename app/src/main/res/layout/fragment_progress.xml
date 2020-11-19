@@ -108,4 +108,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Abs Progress Text -->
+    <TextView
+        android:id="@+id/absProgText"
+        android:layout_width="45dp"
+        android:layout_height="18dp"
+        android:text="Abs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <!-- Abs Total Updating Text -->
+    <TextView
+        android:id="@+id/absTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AbsTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

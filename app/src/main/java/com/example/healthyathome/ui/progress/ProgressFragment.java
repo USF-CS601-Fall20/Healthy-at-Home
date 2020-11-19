@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.healthyathome.AbsFragment;
 import com.example.healthyathome.R;
 import com.example.healthyathome.ui.home.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class ProgressFragment extends Fragment {
 
+    private TextView absTotalCount;
     private TextView userName, email, phoneNumber, progUserID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -34,6 +36,7 @@ public class ProgressFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_progress, container, false);
+        absTotalCount = view.findViewById(R.id.absTotalText);
         userName = view.findViewById(R.id.usernameProgText);
         email = view.findViewById(R.id.emailProgText);
         phoneNumber = view.findViewById(R.id.phoneProgText);
@@ -53,6 +56,16 @@ public class ProgressFragment extends Fragment {
                 email.setText(value.getString("email"));
                 phoneNumber.setText(value.getString("phone"));
                 progUserID.setText(userID);
+            }
+        });
+
+        // Populate abs data
+        documentReference = firebaseFirestore.collection("users")
+                .document(userID).collection("workouts").document("abs");
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                absTotalCount.setText(value.getString("total"));
             }
         });
 
