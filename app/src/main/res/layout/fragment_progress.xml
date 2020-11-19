@@ -134,4 +134,56 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.566" />
 
+    <!-- Arms Progress Text -->
+    <TextView
+        android:id="@+id/armsProgText"
+        android:layout_width="45dp"
+        android:layout_height="18dp"
+        android:text="Arms"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <!-- Arms Total Updating Text -->
+    <TextView
+        android:id="@+id/armsTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="armsTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <!-- Cardio Progress Text -->
+    <TextView
+        android:id="@+id/cardioProgText"
+        android:layout_width="45dp"
+        android:layout_height="18dp"
+        android:text="Cardio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.704" />
+
+    <!-- Cardio Total Updating Text -->
+    <TextView
+        android:id="@+id/cardioTotalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cardioTotal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

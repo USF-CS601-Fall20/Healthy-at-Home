@@ -26,6 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class ProgressFragment extends Fragment {
 
     private TextView absTotalCount;
+    private TextView armsTotalCount;
+    private TextView cardioTotalCount;
     private TextView userName, email, phoneNumber, progUserID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -37,6 +39,8 @@ public class ProgressFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_progress, container, false);
         absTotalCount = view.findViewById(R.id.absTotalText);
+        armsTotalCount = view.findViewById(R.id.armsTotalText);
+        cardioTotalCount = view.findViewById(R.id.cardioTotalText);
         userName = view.findViewById(R.id.usernameProgText);
         email = view.findViewById(R.id.emailProgText);
         phoneNumber = view.findViewById(R.id.phoneProgText);
@@ -66,6 +70,26 @@ public class ProgressFragment extends Fragment {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 absTotalCount.setText(value.getString("total"));
+            }
+        });
+
+        // Populate arms data
+        documentReference = firebaseFirestore.collection("users")
+                .document(userID).collection("workouts").document("arms");
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                armsTotalCount.setText(value.getString("total"));
+            }
+        });
+
+        // Populate cardio data
+        documentReference = firebaseFirestore.collection("users")
+                .document(userID).collection("workouts").document("cardio");
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                cardioTotalCount.setText(value.getString("total"));
             }
         });
 
