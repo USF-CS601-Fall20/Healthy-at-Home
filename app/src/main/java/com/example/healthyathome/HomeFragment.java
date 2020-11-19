@@ -1,4 +1,4 @@
-package com.example.healthyathome.ui.home;
+package com.example.healthyathome;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,8 +14,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.healthyathome.CaloriesFragment;
 import com.example.healthyathome.R;
-import com.example.healthyathome.ui.categories.CategoriesFragment;
-import com.example.healthyathome.ui.progress.ProgressFragment;
+import com.example.healthyathome.CategoriesFragment;
+import com.example.healthyathome.ProgressFragment;
 
 import java.util.Random;
 

@@ -10,8 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.healthyathome.ui.categories.CategoriesFragment;
-import com.example.healthyathome.ui.home.HomeFragment;
+import com.example.healthyathome.CategoriesFragment;
+import com.example.healthyathome.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;

@@ -1,4 +1,4 @@
-package com.example.healthyathome.ui.progress;
+package com.example.healthyathome;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.healthyathome.AbsFragment;
 import com.example.healthyathome.R;
-import com.example.healthyathome.ui.home.HomeFragment;
+import com.example.healthyathome.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;

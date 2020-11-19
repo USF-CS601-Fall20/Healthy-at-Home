@@ -1,4 +1,4 @@
-package com.example.healthyathome.ui.categories;
+package com.example.healthyathome;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,7 +19,7 @@ import com.example.healthyathome.ChestFragment;
 import com.example.healthyathome.LegsFragment;
 import com.example.healthyathome.R;
 import com.example.healthyathome.ShouldersFragment;
-import com.example.healthyathome.ui.home.HomeFragment;
+import com.example.healthyathome.HomeFragment;
 
 public class CategoriesFragment extends Fragment {
 
