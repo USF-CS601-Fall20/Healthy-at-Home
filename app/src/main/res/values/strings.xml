@@ -70,6 +70,36 @@
         <item>250</item>
     </string-array>
 
+    <!-- Distance -->
+    <string-array name="distance">
+        <item>0.25</item>
+        <item>0.50</item>
+        <item>0.75</item>
+        <item>1.00</item>
+        <item>1.25</item>
+        <item>1.50</item>
+        <item>1.75</item>
+        <item>2.00</item>
+        <item>2.25</item>
+        <item>2.50</item>
+        <item>2.75</item>
+        <item>3.00</item>
+        <item>3.50</item>
+        <item>4.00</item>
+        <item>4.50</item>
+        <item>5.00</item>
+        <item>5.50</item>
+        <item>6.00</item>
+        <item>6.50</item>
+        <item>7.00</item>
+        <item>7.50</item>
+        <item>8.00</item>
+        <item>8.50</item>
+        <item>9.00</item>
+        <item>9.50</item>
+        <item>10.00</item>
+    </string-array>
+
     <!-- Weights -->
     <string-array name="weights">
         <item>10</item>
@@ -154,37 +184,50 @@
     <!-- Abdominal Exercises -->
     <string-array name="abdominalExercises">
         <item>Crunches</item>
-        <item>test</item>
+        <item>Plank</item>
+        <item>Reverse Crunches</item>
+        <item>Russian Twist</item>
     </string-array>
 
     <!-- Arm Exercises -->
     <string-array name="armExercises">
         <item>Bicep Curl</item>
-        <item>test</item>
+        <item>Wrist Curl</item>
+        <item>Triceps Kickback</item>
+        <item>Lateral Raise</item>
     </string-array>
 
     <!-- Cardio Exercises -->
     <string-array name="cardioExercises">
-        <item>Laps</item>
-        <item>test</item>
+        <item>Walk</item>
+        <item>Jog</item>
+        <item>Run</item>
+        <item>Sprint</item>
     </string-array>
 
     <!-- Chest Exercises -->
     <string-array name="chestExercises">
-        <item>Dumbbell Bench</item>
-        <item>test</item>
+        <item>Bench</item>
+        <item>Bridge Fly</item>
+        <item>Lateral Climber</item>
+        <item>Pushup</item>
     </string-array>
 
     <!-- Leg Exercises -->
     <string-array name="legExercises">
+        <item>Calf Raise</item>
+        <item>Glute Bridge</item>
+        <item>Lunges</item>
         <item>Squats</item>
-        <item>test</item>
     </string-array>
 
     <!-- Shoulder Exercises -->
     <string-array name="shoulderExercises">
-        <item>Dumbbell Shoulder Press</item>
-        <item>test</item>
+        <item>Deltoid Raise</item>
+        <item>Front Raise</item>
+        <item>Shoulder Press</item>
+        <item>Shoulder Shrug</item>
+        <item>Upright Row</item>
     </string-array>
 
 </resources>

@@ -35,20 +35,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arms" />
 
-    <!-- Abs Header Text -->
-    <TextView
-        android:id="@+id/armsText"
-        android:layout_width="109dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="74dp"
-        android:layout_marginBottom="127dp"
-        android:text="Arms"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/weight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!-- Exercise Choice -->
     <Spinner
         android:id="@+id/exercises"
@@ -60,7 +46,7 @@
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
         android:entries="@array/armExercises"
-        app:layout_constraintBottom_toTopOf="@+id/weight"
+        app:layout_constraintBottom_toTopOf="@+id/distance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +54,7 @@
 
     <!-- Weight Choice -->
     <Spinner
-        android:id="@+id/weight"
+        android:id="@+id/distance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="51dp"
@@ -94,7 +80,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weight" />
+        app:layout_constraintTop_toBottomOf="@+id/distance" />
 
     <!-- Sets Choice -->
     <Spinner
@@ -115,7 +101,7 @@
 
     <!-- Weight Text -->
     <EditText
-        android:id="@+id/weightText"
+        android:id="@+id/distanceText"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="281dp"
@@ -144,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="@+id/setsText"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/setsText"
-        app:layout_constraintTop_toBottomOf="@+id/weightText" />
+        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
 
     <!-- Sets Text -->
     <EditText
