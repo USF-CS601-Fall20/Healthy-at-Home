@@ -47,7 +47,7 @@
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
         android:entries="@array/abdominalExercises"
-        app:layout_constraintBottom_toTopOf="@+id/distance"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
 
     <!-- Weight Choice -->
     <Spinner
-        android:id="@+id/distance"
+        android:id="@+id/weight"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="51dp"
@@ -81,7 +81,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/distance" />
+        app:layout_constraintTop_toBottomOf="@+id/weight" />
 
     <!-- Sets Choice -->
     <Spinner
@@ -102,7 +102,7 @@
 
     <!-- Weight Text -->
     <EditText
-        android:id="@+id/distanceText"
+        android:id="@+id/weightText"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="281dp"
@@ -131,7 +131,7 @@
         app:layout_constraintEnd_toEndOf="@+id/setsText"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/setsText"
-        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
+        app:layout_constraintTop_toBottomOf="@+id/weightText" />
 
     <!-- Sets Text -->
     <EditText
