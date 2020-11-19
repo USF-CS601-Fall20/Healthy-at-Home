@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,9 +18,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -27,8 +25,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class CaloriesFragment extends Fragment{
 
-    private TextView calorieCount;
     private int calories;
+    private Spinner calorieSpinner;
+    private TextView calorieCount;
+    private String calorieString;
     private String userID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -37,6 +37,7 @@ public class CaloriesFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_calories, container, false);
 
+        calorieSpinner = view.findViewById(R.id.calories);
         calorieCount = view.findViewById(R.id.calorieCount);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -47,7 +48,9 @@ public class CaloriesFragment extends Fragment{
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                calorieCount.setText(value.getString("calories"));
+                calorieString = value.getString("calories");
+                calorieCount.setText(calorieString);
+                calories = Integer.parseInt(calorieString);
             }
         });
 
@@ -56,8 +59,12 @@ public class CaloriesFragment extends Fragment{
         submitCalories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String calorieSubmission = calorieSpinner.getSelectedItem().toString();
+                calories += Integer.parseInt(calorieSubmission);
+                calorieString = String.valueOf(calories);
+
                 DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
-                documentReference.update("calories", "10");
+                documentReference.update("calories", calorieString);
                 Toast.makeText(getActivity().getBaseContext(), "Submitted!", Toast.LENGTH_SHORT).show();
             }
         });
