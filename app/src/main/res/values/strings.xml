@@ -1,21 +1,19 @@
 <resources>
-    <string name="app_name">HealthyAtHome</string>
-    <string name="title_home">Home</string>
-    <string name="title_progress">Progress</string>
-    <string name="title_categories">Categories</string>
-
-
-    <!-- Strings related to home screen -->
     <color name="skyBlue">#77aced</color>
     <color name="lightPurple">#ffa8f9</color>
     <color name="darkPurple">#c300ff</color>
     <color name="powderBlue">#B0E0E6</color>
-    <string name="quarantineTip">\Stay healthy at home\</string>
-    <string name="tipIntro"> <u>Quarantine health tip of the day:</u> </string>
+    <color name="Cyan">#00eeff</color>
 
+    <!-- Strings related to home screen -->
+    <string name="app_name">HealthyAtHome</string>
+    <string name="title_home">Home</string>
+    <string name="title_progress">Progress</string>
+    <string name="title_categories">Categories</string>
+    <string name="quarantineTip">\Stay healthy at home\</string>
 
     <!-- Strings related to categories screen -->
-    <color name="Cyan">#00eeff</color>
+    <string name="tipIntro"> <u>Quarantine health tip of the day:</u> </string>
 
     <!-- Calories -->
     <string-array name="calories">

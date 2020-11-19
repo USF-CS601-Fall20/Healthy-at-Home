@@ -49,14 +49,14 @@
 
     <!-- Username Text -->
     <TextView
-        android:id="@+id/userProgText"
-        android:layout_width="54dp"
+        android:id="@+id/usernameProgText"
+        android:layout_width="130dp"
         android:layout_height="19dp"
         android:layout_marginStart="89dp"
         android:layout_marginLeft="89dp"
         android:layout_marginEnd="92dp"
         android:layout_marginRight="92dp"
-        android:text="User"
+        android:text="UserName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profileImage"
@@ -66,8 +66,8 @@
     <!-- Email Text -->
     <TextView
         android:id="@+id/emailProgText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="19dp"
         android:layout_marginStart="89dp"
         android:layout_marginLeft="89dp"
         android:layout_marginEnd="112dp"
@@ -75,15 +75,16 @@
         android:text="Email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toEndOf="@+id/profileImage"
-        app:layout_constraintTop_toBottomOf="@+id/userProgText"
+        app:layout_constraintTop_toBottomOf="@+id/usernameProgText"
         app:layout_constraintVertical_bias="0.037" />
 
     <!-- Phone Text -->
     <TextView
         android:id="@+id/phoneProgText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="19dp"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
         android:layout_marginEnd="108dp"
@@ -91,14 +92,15 @@
         android:text="Phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toEndOf="@+id/profileImage"
         app:layout_constraintTop_toBottomOf="@+id/emailProgText"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <!-- User ID Text -->
     <TextView
         android:id="@+id/idProgText"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:text="UserID"

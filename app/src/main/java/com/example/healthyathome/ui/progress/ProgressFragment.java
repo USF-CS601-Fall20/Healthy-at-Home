@@ -17,16 +17,47 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.healthyathome.R;
 import com.example.healthyathome.ui.home.HomeFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class ProgressFragment extends Fragment {
 
-    private ProgressViewModel progressViewModel;
+    private TextView userName, email, phoneNumber, progUserID;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
+    private String userID;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
 //        container.removeAllViews();
         View view = inflater.inflate(R.layout.fragment_progress, container, false);
+        userName = view.findViewById(R.id.usernameProgText);
+        email = view.findViewById(R.id.emailProgText);
+        phoneNumber = view.findViewById(R.id.phoneProgText);
+        progUserID = view.findViewById(R.id.idProgText);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        userID = firebaseAuth.getCurrentUser().getUid();
+
+        // Populate user data
+        DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                userName.setText(value.getString("userName"));
+                email.setText(value.getString("email"));
+                phoneNumber.setText(value.getString("phone"));
+                progUserID.setText(userID);
+            }
+        });
 
         // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
@@ -43,18 +74,5 @@ public class ProgressFragment extends Fragment {
         });
 
         return view;
-
-
-//        progressViewModel =
-//                new ViewModelProvider(this).get(ProgressViewModel.class);
-//        View root = inflater.inflate(R.layout.fragment_progress, container, false);
-//        final TextView textView = root.findViewById(R.id.text_progress);
-//        progressViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-//        return root;
     }
 }
