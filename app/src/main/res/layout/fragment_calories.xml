@@ -44,7 +44,7 @@
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
         android:entries="@array/calories"
-        app:layout_constraintBottom_toTopOf="@+id/CaloriesEntryButton"
+        app:layout_constraintBottom_toTopOf="@+id/caloriesEntryButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent" />
@@ -65,7 +65,7 @@
 
     <!-- Submit Entry Button -->
     <Button
-        android:id="@+id/CaloriesEntryButton"
+        android:id="@+id/caloriesEntryButton"
         android:layout_width="152dp"
         android:layout_height="51dp"
         android:layout_marginStart="116dp"
@@ -81,5 +81,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caloriesText"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/calorieCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories"
+        app:layout_constraintBottom_toTopOf="@+id/calories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monitorText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

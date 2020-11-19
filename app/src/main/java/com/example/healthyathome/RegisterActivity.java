@@ -92,6 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                             userMap.put("userName", userName);
                             userMap.put("email", email);
                             userMap.put("phone", phoneNumber);
+                            userMap.put("calories", "0");
                             documentReference.set(userMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
