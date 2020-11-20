@@ -55,20 +55,22 @@ public class CardioFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                walkCountString = value.getString("walk");
-                walkCount = Integer.parseInt(walkCountString);
+                if (value != null) {
+                    walkCountString = value.getString("walk");
+                    walkCount = Integer.parseInt(walkCountString);
 
-                jogCountString = value.getString("jog");
-                jogCount = Integer.parseInt(jogCountString);
+                    jogCountString = value.getString("jog");
+                    jogCount = Integer.parseInt(jogCountString);
 
-                runCountString = value.getString("run");
-                runCount = Integer.parseInt(runCountString);
+                    runCountString = value.getString("run");
+                    runCount = Integer.parseInt(runCountString);
 
-                sprintCountString = value.getString("sprint");
-                sprintCount = Integer.parseInt(sprintCountString);
+                    sprintCountString = value.getString("sprint");
+                    sprintCount = Integer.parseInt(sprintCountString);
 
-                totalCountString = value.getString("total");
-                totalCount = Integer.parseInt(totalCountString);
+                    totalCountString = value.getString("total");
+                    totalCount = Integer.parseInt(totalCountString);
+                }
             }
         });
 

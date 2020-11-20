@@ -48,9 +48,11 @@ public class CaloriesFragment extends Fragment{
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                calorieString = value.getString("calories");
-                calories = Integer.parseInt(calorieString);
-                calorieCount.setText(calorieString);
+                if (value != null) {
+                    calorieString = value.getString("calories");
+                    calories = Integer.parseInt(calorieString);
+                    calorieCount.setText(calorieString);
+                }
             }
         });
 

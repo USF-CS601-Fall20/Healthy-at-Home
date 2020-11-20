@@ -71,10 +71,12 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                userName.setText(value.getString("userName"));
-                email.setText(value.getString("email"));
-                phoneNumber.setText(value.getString("phone"));
-                progUserID.setText(userID);
+                if (value != null) {
+                    userName.setText(value.getString("userName"));
+                    email.setText(value.getString("email"));
+                    phoneNumber.setText(value.getString("phone"));
+                    progUserID.setText(userID);
+                }
             }
         });
 
@@ -84,7 +86,9 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                absTotalCount.setText(value.getString("total"));
+                if (value != null) {
+                    absTotalCount.setText(value.getString("total"));
+                }
             }
         });
 
@@ -94,7 +98,9 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                armsTotalCount.setText(value.getString("total"));
+                if (value != null) {
+                    armsTotalCount.setText(value.getString("total"));
+                }
             }
         });
 
@@ -104,7 +110,9 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                cardioTotalCount.setText(value.getString("total"));
+                if (value != null) {
+                    cardioTotalCount.setText(value.getString("total"));
+                }
             }
         });
 
@@ -114,7 +122,9 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                chestTotalCount.setText(value.getString("total"));
+                if (value != null) {
+                    chestTotalCount.setText(value.getString("total"));
+                }
             }
         });
 
@@ -124,7 +134,9 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                legsTotalCount.setText(value.getString("total"));
+                if (value != null) {
+                    legsTotalCount.setText(value.getString("total"));
+                }
             }
         });
 
@@ -134,7 +146,9 @@ public class ProgressFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                shouldersTotalCount.setText(value.getString("total"));
+                if (value != null) {
+                    shouldersTotalCount.setText(value.getString("total"));
+                }
             }
         });
 

@@ -55,20 +55,22 @@ public class ArmsFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                bicepCurlCountString = value.getString("bicepCurl");
-                bicepCurlCount = Integer.parseInt(bicepCurlCountString);
+                if (value != null) {
+                    bicepCurlCountString = value.getString("bicepCurl");
+                    bicepCurlCount = Integer.parseInt(bicepCurlCountString);
 
-                wristCurlCountString = value.getString("wristCurl");
-                wristCurlCount = Integer.parseInt(wristCurlCountString);
+                    wristCurlCountString = value.getString("wristCurl");
+                    wristCurlCount = Integer.parseInt(wristCurlCountString);
 
-                reverseCrunchesCountString = value.getString("tricepsKickback");
-                tricepKickCount = Integer.parseInt(reverseCrunchesCountString);
+                    reverseCrunchesCountString = value.getString("tricepsKickback");
+                    tricepKickCount = Integer.parseInt(reverseCrunchesCountString);
 
-                lateralRaiseCountString = value.getString("lateralRaise");
-                lateralRaiseCount = Integer.parseInt(lateralRaiseCountString);
+                    lateralRaiseCountString = value.getString("lateralRaise");
+                    lateralRaiseCount = Integer.parseInt(lateralRaiseCountString);
 
-                totalCountString = value.getString("total");
-                totalCount = Integer.parseInt(totalCountString);
+                    totalCountString = value.getString("total");
+                    totalCount = Integer.parseInt(totalCountString);
+                }
             }
         });
 

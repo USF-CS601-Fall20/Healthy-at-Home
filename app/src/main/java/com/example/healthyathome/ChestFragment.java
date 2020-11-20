@@ -55,20 +55,22 @@ public class ChestFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                benchCountString = value.getString("bench");
-                benchCount = Integer.parseInt(benchCountString);
+                if (value != null) {
+                    benchCountString = value.getString("bench");
+                    benchCount = Integer.parseInt(benchCountString);
 
-                bridgeFlyCountString = value.getString("bridge");
-                bridgeFlyCount = Integer.parseInt(bridgeFlyCountString);
+                    bridgeFlyCountString = value.getString("bridge");
+                    bridgeFlyCount = Integer.parseInt(bridgeFlyCountString);
 
-                lateralClimbCountString = value.getString("lateralClimber");
-                lateralClimbCount = Integer.parseInt(lateralClimbCountString);
+                    lateralClimbCountString = value.getString("lateralClimber");
+                    lateralClimbCount = Integer.parseInt(lateralClimbCountString);
 
-                pushupCountString = value.getString("pushup");
-                pushupCount = Integer.parseInt(pushupCountString);
+                    pushupCountString = value.getString("pushup");
+                    pushupCount = Integer.parseInt(pushupCountString);
 
-                totalCountString = value.getString("total");
-                totalCount = Integer.parseInt(totalCountString);
+                    totalCountString = value.getString("total");
+                    totalCount = Integer.parseInt(totalCountString);
+                }
             }
         });
 

@@ -58,20 +58,22 @@ public class AbsFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                crunchesCountString = value.getString("crunches");
-                crunchesCount = Integer.parseInt(crunchesCountString);
+                if (value != null) {
+                    crunchesCountString = value.getString("crunches");
+                    crunchesCount = Integer.parseInt(crunchesCountString);
 
-                plankCountString = value.getString("plank");
-                plankCount = Integer.parseInt(plankCountString);
+                    plankCountString = value.getString("plank");
+                    plankCount = Integer.parseInt(plankCountString);
 
-                reverseCrunchesCountString = value.getString("reverseCrunches");
-                reverseCrunchesCount = Integer.parseInt(reverseCrunchesCountString);
+                    reverseCrunchesCountString = value.getString("reverseCrunches");
+                    reverseCrunchesCount = Integer.parseInt(reverseCrunchesCountString);
 
-                russianTwistCountString = value.getString("russianTwist");
-                russianTwistCount = Integer.parseInt(russianTwistCountString);
+                    russianTwistCountString = value.getString("russianTwist");
+                    russianTwistCount = Integer.parseInt(russianTwistCountString);
 
-                totalCountString = value.getString("total");
-                totalCount = Integer.parseInt(totalCountString);
+                    totalCountString = value.getString("total");
+                    totalCount = Integer.parseInt(totalCountString);
+                }
             }
         });
 

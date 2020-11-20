@@ -55,20 +55,22 @@ public class LegsFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                calfRaiseCountString = value.getString("calfRaise");
-                calfRaiseCount = Integer.parseInt(calfRaiseCountString);
+                if (value != null) {
+                    calfRaiseCountString = value.getString("calfRaise");
+                    calfRaiseCount = Integer.parseInt(calfRaiseCountString);
 
-                gluteBridgeCountString = value.getString("gluteBridge");
-                gluteBridgeCount = Integer.parseInt(gluteBridgeCountString);
+                    gluteBridgeCountString = value.getString("gluteBridge");
+                    gluteBridgeCount = Integer.parseInt(gluteBridgeCountString);
 
-                lungesCountString = value.getString("lunges");
-                lungesCount = Integer.parseInt(lungesCountString);
+                    lungesCountString = value.getString("lunges");
+                    lungesCount = Integer.parseInt(lungesCountString);
 
-                squatsCountString = value.getString("squats");
-                squatsCount = Integer.parseInt(squatsCountString);
+                    squatsCountString = value.getString("squats");
+                    squatsCount = Integer.parseInt(squatsCountString);
 
-                totalCountString = value.getString("total");
-                totalCount = Integer.parseInt(totalCountString);
+                    totalCountString = value.getString("total");
+                    totalCount = Integer.parseInt(totalCountString);
+                }
             }
         });
 

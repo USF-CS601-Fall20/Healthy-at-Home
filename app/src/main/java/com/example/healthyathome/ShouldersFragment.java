@@ -57,23 +57,25 @@ public class ShouldersFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                deltoidRaiseCountString = value.getString("deltoidRaise");
-                deltoidRaiseCount = Integer.parseInt(deltoidRaiseCountString);
+                if (value != null) {
+                    deltoidRaiseCountString = value.getString("deltoidRaise");
+                    deltoidRaiseCount = Integer.parseInt(deltoidRaiseCountString);
 
-                frontRaiseCountString = value.getString("frontRaise");
-                frontRaiseCount = Integer.parseInt(frontRaiseCountString);
+                    frontRaiseCountString = value.getString("frontRaise");
+                    frontRaiseCount = Integer.parseInt(frontRaiseCountString);
 
-                shoulderPressCountString = value.getString("shoulderPress");
-                shoulderPressCount = Integer.parseInt(shoulderPressCountString);
+                    shoulderPressCountString = value.getString("shoulderPress");
+                    shoulderPressCount = Integer.parseInt(shoulderPressCountString);
 
-                shoulderShrugCountString = value.getString("shoulderShrug");
-                shoulderShrugCount = Integer.parseInt(shoulderShrugCountString);
+                    shoulderShrugCountString = value.getString("shoulderShrug");
+                    shoulderShrugCount = Integer.parseInt(shoulderShrugCountString);
 
-                uprightRowCountString = value.getString("uprightRow");
-                uprightRowCount = Integer.parseInt(uprightRowCountString);
+                    uprightRowCountString = value.getString("uprightRow");
+                    uprightRowCount = Integer.parseInt(uprightRowCountString);
 
-                totalCountString = value.getString("total");
-                totalCount = Integer.parseInt(totalCountString);
+                    totalCountString = value.getString("total");
+                    totalCount = Integer.parseInt(totalCountString);
+                }
             }
         });
 
