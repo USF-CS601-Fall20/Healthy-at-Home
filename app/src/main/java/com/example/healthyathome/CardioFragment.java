@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.healthyathome.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,9 +23,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class CardioFragment extends Fragment {
 
+    private int walkCount;
+    private int jogCount;
+    private int runCount;
+    private int sprintCount;
     private int totalCount;
-    private Spinner cardioSpinner;
+
+    private String walkCountString;
+    private String jogCountString;
+    private String runCountString;
+    private String sprintCountString;
     private String totalCountString;
+
+    private Spinner cardioSpinner;
     private String userID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -46,6 +55,18 @@ public class CardioFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                walkCountString = value.getString("walk");
+                walkCount = Integer.parseInt(walkCountString);
+
+                jogCountString = value.getString("jog");
+                jogCount = Integer.parseInt(jogCountString);
+
+                runCountString = value.getString("run");
+                runCount = Integer.parseInt(runCountString);
+
+                sprintCountString = value.getString("sprint");
+                sprintCount = Integer.parseInt(sprintCountString);
+
                 totalCountString = value.getString("total");
                 totalCount = Integer.parseInt(totalCountString);
             }
@@ -56,12 +77,33 @@ public class CardioFragment extends Fragment {
         submitCardio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DocumentReference documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("cardio");
+
                 String selectedExercise = cardioSpinner.getSelectedItem().toString();
+
+                if (selectedExercise.equals("Walk")){
+                    walkCount++;
+                    walkCountString = String.valueOf(walkCount);
+                    documentReference.update("walk", walkCountString);
+                }else if (selectedExercise.equals("Jog")){
+                    jogCount++;
+                    jogCountString = String.valueOf(jogCount);
+                    documentReference.update("jog", jogCountString);
+                }else if (selectedExercise.equals("Run")){
+                    runCount++;
+                    runCountString = String.valueOf(runCount);
+                    documentReference.update("run", runCountString);
+                }
+                else if (selectedExercise.equals("Sprint")){
+                    sprintCount++;
+                    sprintCountString = String.valueOf(sprintCount);
+                    documentReference.update("sprint", sprintCountString);
+                }
+
                 totalCount++;
                 totalCountString = String.valueOf(totalCount);
 
-                DocumentReference documentReference = firebaseFirestore.collection("users")
-                        .document(userID).collection("workouts").document("cardio");
                 documentReference.update("total", totalCountString);
                 Toast.makeText(getActivity().getBaseContext(), "Cardio Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
