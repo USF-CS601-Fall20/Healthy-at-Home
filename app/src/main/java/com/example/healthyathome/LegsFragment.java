@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.healthyathome.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,9 +23,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class LegsFragment extends Fragment {
 
+    private int calfRaiseCount;
+    private int gluteBridgeCount;
+    private int lungesCount;
+    private int squatsCount;
     private int totalCount;
-    private Spinner legsSpinner;
+
+    private String calfRaiseCountString;
+    private String gluteBridgeCountString;
+    private String lungesCountString;
+    private String squatsCountString;
     private String totalCountString;
+
+    private Spinner legsSpinner;
     private String userID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -46,6 +55,18 @@ public class LegsFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                calfRaiseCountString = value.getString("calfRaise");
+                calfRaiseCount = Integer.parseInt(calfRaiseCountString);
+
+                gluteBridgeCountString = value.getString("gluteBridge");
+                gluteBridgeCount = Integer.parseInt(gluteBridgeCountString);
+
+                lungesCountString = value.getString("lunges");
+                lungesCount = Integer.parseInt(lungesCountString);
+
+                squatsCountString = value.getString("squats");
+                squatsCount = Integer.parseInt(squatsCountString);
+
                 totalCountString = value.getString("total");
                 totalCount = Integer.parseInt(totalCountString);
             }
@@ -56,13 +77,34 @@ public class LegsFragment extends Fragment {
         submitLegs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String selectedExercise = legsSpinner.getSelectedItem().toString();
-                totalCount++;
-                totalCountString = String.valueOf(totalCount);
-
                 DocumentReference documentReference = firebaseFirestore.collection("users")
                         .document(userID).collection("workouts").document("legs");
+
+                String selectedExercise = legsSpinner.getSelectedItem().toString();
+
+                if (selectedExercise.equals("Calf Raise")){
+                    calfRaiseCount++;
+                    calfRaiseCountString = String.valueOf(calfRaiseCount);
+                    documentReference.update("calfRaise", calfRaiseCountString);
+                }else if (selectedExercise.equals("Glute Bridge")){
+                    gluteBridgeCount++;
+                    gluteBridgeCountString = String.valueOf(gluteBridgeCount);
+                    documentReference.update("gluteBridge", gluteBridgeCountString);
+                }else if (selectedExercise.equals("Lunges")){
+                    lungesCount++;
+                    lungesCountString = String.valueOf(lungesCount);
+                    documentReference.update("lunges", lungesCountString);
+                }
+                else if (selectedExercise.equals("Squats")){
+                    squatsCount++;
+                    squatsCountString = String.valueOf(squatsCount);
+                    documentReference.update("squats", squatsCountString);
+                }
+
+                totalCount++;
+                totalCountString = String.valueOf(totalCount);
                 documentReference.update("total", totalCountString);
+
                 Toast.makeText(getActivity().getBaseContext(), "Legs Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
         });

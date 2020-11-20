@@ -225,6 +225,7 @@ public class RegisterActivity extends AppCompatActivity {
                             shouldersMap.put("deltoidRaise", "0");
                             shouldersMap.put("frontRaise", "0");
                             shouldersMap.put("shoulderPress", "0");
+                            shouldersMap.put("shoulderShrug", "0");
                             shouldersMap.put("uprightRow", "0");
                             documentReference.set(shouldersMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

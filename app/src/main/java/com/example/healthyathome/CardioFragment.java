@@ -103,8 +103,8 @@ public class CardioFragment extends Fragment {
 
                 totalCount++;
                 totalCountString = String.valueOf(totalCount);
-
                 documentReference.update("total", totalCountString);
+
                 Toast.makeText(getActivity().getBaseContext(), "Cardio Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
         });

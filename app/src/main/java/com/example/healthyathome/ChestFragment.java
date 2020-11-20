@@ -103,8 +103,8 @@ public class ChestFragment extends Fragment {
 
                 totalCount++;
                 totalCountString = String.valueOf(totalCount);
-
                 documentReference.update("total", totalCountString);
+
                 Toast.makeText(getActivity().getBaseContext(), "Chest Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
         });

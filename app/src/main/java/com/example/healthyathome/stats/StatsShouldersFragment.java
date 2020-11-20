@@ -26,6 +26,7 @@ public class StatsShouldersFragment extends Fragment {
     private TextView deltoidRaiseCount;
     private TextView frontRaiseCount;
     private TextView shoulderPressCount;
+    private TextView shoulderShrugCount;
     private TextView uprightRowCount;
 
     private String userID;
@@ -39,6 +40,7 @@ public class StatsShouldersFragment extends Fragment {
         deltoidRaiseCount = view.findViewById(R.id.deltoidRaiseNumText);
         frontRaiseCount = view.findViewById(R.id.frontRaiseNumText);
         shoulderPressCount = view.findViewById(R.id.shoulderPressNumText);
+        shoulderShrugCount = view.findViewById(R.id.shoulderShrugNumText);
         uprightRowCount = view.findViewById(R.id.uprightRowNumText);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -54,6 +56,7 @@ public class StatsShouldersFragment extends Fragment {
                 deltoidRaiseCount.setText(value.getString("deltoidRaise"));
                 frontRaiseCount.setText(value.getString("frontRaise"));
                 shoulderPressCount.setText(value.getString("shoulderPress"));
+                shoulderShrugCount.setText(value.getString("shoulderShrug"));
                 uprightRowCount.setText(value.getString("uprightRow"));
             }
         });

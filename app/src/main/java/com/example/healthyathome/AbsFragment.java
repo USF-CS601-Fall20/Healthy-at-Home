@@ -107,6 +107,7 @@ public class AbsFragment extends Fragment {
                 totalCount++;
                 totalCountString = String.valueOf(totalCount);
                 documentReference.update("total", totalCountString);
+
                 Toast.makeText(getActivity().getBaseContext(), "Abs Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
         });

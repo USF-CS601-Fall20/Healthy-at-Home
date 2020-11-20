@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.healthyathome.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,9 +23,21 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class ShouldersFragment extends Fragment {
 
+    private int deltoidRaiseCount;
+    private int frontRaiseCount;
+    private int shoulderPressCount;
+    private int shoulderShrugCount;
+    private int uprightRowCount;
     private int totalCount;
-    private Spinner shouldersSpinner;
+
+    private String deltoidRaiseCountString;
+    private String frontRaiseCountString;
+    private String shoulderPressCountString;
+    private String shoulderShrugCountString;
+    private String uprightRowCountString;
     private String totalCountString;
+
+    private Spinner shouldersSpinner;
     private String userID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -46,6 +57,21 @@ public class ShouldersFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                deltoidRaiseCountString = value.getString("deltoidRaise");
+                deltoidRaiseCount = Integer.parseInt(deltoidRaiseCountString);
+
+                frontRaiseCountString = value.getString("frontRaise");
+                frontRaiseCount = Integer.parseInt(frontRaiseCountString);
+
+                shoulderPressCountString = value.getString("shoulderPress");
+                shoulderPressCount = Integer.parseInt(shoulderPressCountString);
+
+                shoulderShrugCountString = value.getString("shoulderShrug");
+                shoulderShrugCount = Integer.parseInt(shoulderShrugCountString);
+
+                uprightRowCountString = value.getString("uprightRow");
+                uprightRowCount = Integer.parseInt(uprightRowCountString);
+
                 totalCountString = value.getString("total");
                 totalCount = Integer.parseInt(totalCountString);
             }
@@ -56,13 +82,37 @@ public class ShouldersFragment extends Fragment {
         submitShoulders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String selectedExercise = shouldersSpinner.getSelectedItem().toString();
-                totalCount++;
-                totalCountString = String.valueOf(totalCount);
-
                 DocumentReference documentReference = firebaseFirestore.collection("users")
                         .document(userID).collection("workouts").document("shoulders");
+
+                String selectedExercise = shouldersSpinner.getSelectedItem().toString();
+
+                if (selectedExercise.equals("Deltoid Raise")){
+                    deltoidRaiseCount++;
+                    deltoidRaiseCountString = String.valueOf(deltoidRaiseCount);
+                    documentReference.update("deltoidRaise", deltoidRaiseCountString);
+                }else if (selectedExercise.equals("Front Raise")){
+                    frontRaiseCount++;
+                    frontRaiseCountString = String.valueOf(frontRaiseCount);
+                    documentReference.update("frontRaise", frontRaiseCountString);
+                }else if (selectedExercise.equals("Shoulder Press")){
+                    shoulderPressCount++;
+                    shoulderPressCountString = String.valueOf(shoulderPressCount);
+                    documentReference.update("shoulderPress", shoulderPressCountString);
+                }else if (selectedExercise.equals("Shoulder Shrug")){
+                    shoulderShrugCount++;
+                    shoulderShrugCountString = String.valueOf(shoulderShrugCount);
+                    documentReference.update("shoulderShrug", shoulderShrugCountString);
+                }else if (selectedExercise.equals("Upright Row")){
+                    uprightRowCount++;
+                    uprightRowCountString = String.valueOf(uprightRowCount);
+                    documentReference.update("uprightRow", uprightRowCountString);
+                }
+
+                totalCount++;
+                totalCountString = String.valueOf(totalCount);
                 documentReference.update("total", totalCountString);
+
                 Toast.makeText(getActivity().getBaseContext(), "Shoulders Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
         });

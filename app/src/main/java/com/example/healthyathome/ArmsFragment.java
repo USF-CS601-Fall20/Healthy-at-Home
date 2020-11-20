@@ -104,6 +104,7 @@ public class ArmsFragment extends Fragment {
                 totalCount++;
                 totalCountString = String.valueOf(totalCount);
                 documentReference.update("total", totalCountString);
+
                 Toast.makeText(getActivity().getBaseContext(), "Arms Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }
         });
