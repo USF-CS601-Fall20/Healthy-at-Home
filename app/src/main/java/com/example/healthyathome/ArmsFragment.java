@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.healthyathome.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,9 +23,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class ArmsFragment extends Fragment {
 
+    private int bicepCurlCount;
+    private int wristCurlCount;
+    private int tricepKickCount;
+    private int lateralRaiseCount;
     private int totalCount;
-    private Spinner armsSpinner;
+
+    private String bicepCurlCountString;
+    private String wristCurlCountString;
+    private String reverseCrunchesCountString;
+    private String lateralRaiseCountString;
     private String totalCountString;
+
+    private Spinner armsSpinner;
     private String userID;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -46,6 +55,18 @@ public class ArmsFragment extends Fragment {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                bicepCurlCountString = value.getString("bicepCurl");
+                bicepCurlCount = Integer.parseInt(bicepCurlCountString);
+
+                wristCurlCountString = value.getString("wristCurl");
+                wristCurlCount = Integer.parseInt(wristCurlCountString);
+
+                reverseCrunchesCountString = value.getString("tricepsKickback");
+                tricepKickCount = Integer.parseInt(reverseCrunchesCountString);
+
+                lateralRaiseCountString = value.getString("lateralRaise");
+                lateralRaiseCount = Integer.parseInt(lateralRaiseCountString);
+
                 totalCountString = value.getString("total");
                 totalCount = Integer.parseInt(totalCountString);
             }
@@ -56,12 +77,32 @@ public class ArmsFragment extends Fragment {
         submitArms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String selectedExercise = armsSpinner.getSelectedItem().toString();
-                totalCount++;
-                totalCountString = String.valueOf(totalCount);
-
                 DocumentReference documentReference = firebaseFirestore.collection("users")
                         .document(userID).collection("workouts").document("arms");
+
+                String selectedExercise = armsSpinner.getSelectedItem().toString();
+
+                if (selectedExercise.equals("Bicep Curl")){
+                    bicepCurlCount++;
+                    bicepCurlCountString = String.valueOf(bicepCurlCount);
+                    documentReference.update("bicepCurl", bicepCurlCountString);
+                }else if (selectedExercise.equals("Wrist Curl")){
+                    wristCurlCount++;
+                    wristCurlCountString = String.valueOf(wristCurlCount);
+                    documentReference.update("wristCurl", wristCurlCountString);
+                }else if (selectedExercise.equals("Triceps Kickback")){
+                    tricepKickCount++;
+                    reverseCrunchesCountString = String.valueOf(tricepKickCount);
+                    documentReference.update("tricepsKickback", reverseCrunchesCountString);
+                }
+                else if (selectedExercise.equals("Lateral Raise")){
+                    lateralRaiseCount++;
+                    lateralRaiseCountString = String.valueOf(lateralRaiseCount);
+                    documentReference.update("lateralRaise", lateralRaiseCountString);
+                }
+
+                totalCount++;
+                totalCountString = String.valueOf(totalCount);
                 documentReference.update("total", totalCountString);
                 Toast.makeText(getActivity().getBaseContext(), "Arms Exercise Submitted!", Toast.LENGTH_SHORT).show();
             }

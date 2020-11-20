@@ -30,4 +30,116 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.167" />
 
+    <!-- Bicep Curl Text -->
+    <TextView
+        android:id="@+id/bicepCurlText"
+        android:layout_width="175dp"
+        android:layout_height="34dp"
+        android:text="Bicep Curls"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
+
+    <!-- Wrist Curl Text -->
+    <TextView
+        android:id="@+id/wristCurlText"
+        android:layout_width="175dp"
+        android:layout_height="34dp"
+        android:text="Wrist Curls"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <!-- Tricep Kickback Text -->
+    <TextView
+        android:id="@+id/tricepKickbacksText"
+        android:layout_width="175dp"
+        android:layout_height="34dp"
+        android:text="Tricep Kickbacks"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609" />
+
+    <!-- Lateral Raise Text -->
+    <TextView
+        android:id="@+id/lateralRaiseText"
+        android:layout_width="175dp"
+        android:layout_height="34dp"
+        android:text="Lateral Raises"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736" />
+
+    <!-- Bicep Curl Updating Text -->
+    <TextView
+        android:id="@+id/bicepCurlNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
+        android:text="000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bicepCurlText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <!-- Wrist Curl Updating Text -->
+    <TextView
+        android:id="@+id/wristCurlNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toEndOf="@+id/wristCurlText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tricep Kickback Updating Text -->
+    <TextView
+        android:id="@+id/tricepKickNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
+        android:text="000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tricepKickbacksText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <!-- Lateral Raise Updating Text -->
+    <TextView
+        android:id="@+id/lateralRaiseNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toEndOf="@+id/lateralRaiseText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,11 @@ import com.example.healthyathome.AbsFragment;
 import com.example.healthyathome.R;
 import com.example.healthyathome.HomeFragment;
 import com.example.healthyathome.stats.StatsAbsFragment;
+import com.example.healthyathome.stats.StatsArmsFragment;
+import com.example.healthyathome.stats.StatsCardioFragment;
+import com.example.healthyathome.stats.StatsChestFragment;
+import com.example.healthyathome.stats.StatsLegsFragment;
+import com.example.healthyathome.stats.StatsShouldersFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -140,6 +145,76 @@ public class ProgressFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 StatsAbsFragment fragment = new StatsAbsFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
+        // Arms Stats Button
+        ImageButton armsProgButton = (ImageButton) view.findViewById(R.id.armsProgButton);
+        armsProgButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                StatsArmsFragment fragment = new StatsArmsFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
+        // Cardio Stats Button
+        ImageButton cardioProgButton = (ImageButton) view.findViewById(R.id.cardioProgButton);
+        cardioProgButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                StatsCardioFragment fragment = new StatsCardioFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
+        // Chest Stats Button
+        ImageButton chestProgButton = (ImageButton) view.findViewById(R.id.chestProgButton);
+        chestProgButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                StatsChestFragment fragment = new StatsChestFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
+        // Legs Stats Button
+        ImageButton legsProgButton = (ImageButton) view.findViewById(R.id.legsProgButton);
+        legsProgButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                StatsLegsFragment fragment = new StatsLegsFragment();
+                FragmentManager fManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fTransaction = fManager.beginTransaction();
+                fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
+                fTransaction.addToBackStack(null);
+                fTransaction.commit();
+            }
+        });
+
+        // Shoulders Stats Button
+        ImageButton shouldersProgButton = (ImageButton) view.findViewById(R.id.shouldersProgButton);
+        shouldersProgButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                StatsShouldersFragment fragment = new StatsShouldersFragment();
                 FragmentManager fManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fTransaction = fManager.beginTransaction();
                 fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
