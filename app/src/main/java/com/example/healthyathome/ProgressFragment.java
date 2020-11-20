@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -220,6 +221,68 @@ public class ProgressFragment extends Fragment {
                 fTransaction.replace(((ViewGroup)getView().getParent()).getId(), fragment);
                 fTransaction.addToBackStack(null);
                 fTransaction.commit();
+            }
+        });
+
+        // Reset Progress Button
+        Button resetProgressButton = (Button) view.findViewById(R.id.resetProgButton);
+        resetProgressButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // Reset abs progress
+                DocumentReference documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("abs");
+                documentReference.update("crunches", "0");
+                documentReference.update("plank", "0");
+                documentReference.update("reverseCrunches", "0");
+                documentReference.update("russianTwist", "0");
+                documentReference.update("total", "0");
+
+                // Reset arms progress
+                documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("arms");
+                documentReference.update("bicepCurl", "0");
+                documentReference.update("wristCurl", "0");
+                documentReference.update("tricepsKickback", "0");
+                documentReference.update("lateralRaise", "0");
+                documentReference.update("total", "0");
+
+                // Reset cardio progress
+                documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("cardio");
+                documentReference.update("walk", "0");
+                documentReference.update("jog", "0");
+                documentReference.update("run", "0");
+                documentReference.update("sprint", "0");
+                documentReference.update("total", "0");
+
+                // Reset chest progress
+                documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("chest");
+                documentReference.update("bench", "0");
+                documentReference.update("bridge", "0");
+                documentReference.update("lateralClimber", "0");
+                documentReference.update("pushup", "0");
+                documentReference.update("total", "0");
+
+                // Reset legs progress
+                documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("legs");
+                documentReference.update("calfRaise", "0");
+                documentReference.update("gluteBridge", "0");
+                documentReference.update("lunges", "0");
+                documentReference.update("squats", "0");
+                documentReference.update("total", "0");
+
+                // Reset shoulders progress
+                documentReference = firebaseFirestore.collection("users")
+                        .document(userID).collection("workouts").document("shoulders");
+                documentReference.update("deltoidRaise", "0");
+                documentReference.update("frontRaise", "0");
+                documentReference.update("shoulderPress", "0");
+                documentReference.update("shoulderShrug", "0");
+                documentReference.update("uprightRow", "0");
+                documentReference.update("total", "0");
             }
         });
 
