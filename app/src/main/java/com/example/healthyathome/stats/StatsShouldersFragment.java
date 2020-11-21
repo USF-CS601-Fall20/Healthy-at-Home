@@ -66,11 +66,13 @@ public class StatsShouldersFragment extends Fragment {
              */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                deltoidRaiseCount.setText(value.getString("deltoidRaise"));
-                frontRaiseCount.setText(value.getString("frontRaise"));
-                shoulderPressCount.setText(value.getString("shoulderPress"));
-                shoulderShrugCount.setText(value.getString("shoulderShrug"));
-                uprightRowCount.setText(value.getString("uprightRow"));
+                if (value != null) {
+                    deltoidRaiseCount.setText(value.getString("deltoidRaise"));
+                    frontRaiseCount.setText(value.getString("frontRaise"));
+                    shoulderPressCount.setText(value.getString("shoulderPress"));
+                    shoulderShrugCount.setText(value.getString("shoulderShrug"));
+                    uprightRowCount.setText(value.getString("uprightRow"));
+                }
             }
         });
 

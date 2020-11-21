@@ -64,10 +64,12 @@ public class StatsChestFragment extends Fragment{
              */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                benchCount.setText(value.getString("bench"));
-                bridgeCount.setText(value.getString("bridge"));
-                lateralClimbCount.setText(value.getString("lateralClimber"));
-                pushupCount.setText(value.getString("pushup"));
+                if (value != null) {
+                    benchCount.setText(value.getString("bench"));
+                    bridgeCount.setText(value.getString("bridge"));
+                    lateralClimbCount.setText(value.getString("lateralClimber"));
+                    pushupCount.setText(value.getString("pushup"));
+                }
             }
         });
 

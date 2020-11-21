@@ -64,10 +64,12 @@ public class StatsLegsFragment extends Fragment{
              */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                calfRaiseCount.setText(value.getString("calfRaise"));
-                gluteBridgeCount.setText(value.getString("gluteBridge"));
-                lungesCount.setText(value.getString("lunges"));
-                squatsCount.setText(value.getString("squats"));
+                if (value != null) {
+                    calfRaiseCount.setText(value.getString("calfRaise"));
+                    gluteBridgeCount.setText(value.getString("gluteBridge"));
+                    lungesCount.setText(value.getString("lunges"));
+                    squatsCount.setText(value.getString("squats"));
+                }
             }
         });
 

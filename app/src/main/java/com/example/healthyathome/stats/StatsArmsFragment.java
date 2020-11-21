@@ -64,10 +64,12 @@ public class StatsArmsFragment extends Fragment {
              */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                bicepCurlCount.setText(value.getString("bicepCurl"));
-                wristCurlCount.setText(value.getString("wristCurl"));
-                tricepKickCount.setText(value.getString("tricepsKickback"));
-                lateralRaiseCount.setText(value.getString("lateralRaise"));
+                if (value != null) {
+                    bicepCurlCount.setText(value.getString("bicepCurl"));
+                    wristCurlCount.setText(value.getString("wristCurl"));
+                    tricepKickCount.setText(value.getString("tricepsKickback"));
+                    lateralRaiseCount.setText(value.getString("lateralRaise"));
+                }
             }
         });
 

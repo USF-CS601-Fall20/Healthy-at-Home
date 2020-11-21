@@ -64,10 +64,12 @@ public class StatsAbsFragment extends Fragment{
              */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                planksCount.setText(value.getString("plank"));
-                crunchesCount.setText(value.getString("crunches"));
-                reverseCrunchesCount.setText(value.getString("reverseCrunches"));
-                russianTwistsCount.setText(value.getString("russianTwist"));
+                if (value != null) {
+                    planksCount.setText(value.getString("plank"));
+                    crunchesCount.setText(value.getString("crunches"));
+                    reverseCrunchesCount.setText(value.getString("reverseCrunches"));
+                    russianTwistsCount.setText(value.getString("russianTwist"));
+                }
             }
         });
 

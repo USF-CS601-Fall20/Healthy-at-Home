@@ -64,10 +64,12 @@ public class StatsCardioFragment extends Fragment{
              */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                walkCount.setText(value.getString("walk"));
-                jogCount.setText(value.getString("jog"));
-                runCount.setText(value.getString("run"));
-                sprintCount.setText(value.getString("sprint"));
+                if (value != null) {
+                    walkCount.setText(value.getString("walk"));
+                    jogCount.setText(value.getString("jog"));
+                    runCount.setText(value.getString("run"));
+                    sprintCount.setText(value.getString("sprint"));
+                }
             }
         });
 
