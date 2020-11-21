@@ -5,14 +5,14 @@
     <color name="powderBlue">#B0E0E6</color>
     <color name="Cyan">#00eeff</color>
 
-    <!-- Strings related to home screen -->
+    <!-- Names -->
     <string name="app_name">HealthyAtHome</string>
     <string name="title_home">Home</string>
     <string name="title_progress">Progress</string>
     <string name="title_categories">Categories</string>
-    <string name="quarantineTip">\Stay healthy at home\</string>
 
-    <!-- Strings related to categories screen -->
+    <!-- Tips -->
+    <string name="quarantineTip">\Stay healthy at home\</string>
     <string name="tipIntro"> <u>Quarantine health tip of the day:</u> </string>
 
     <!-- Calories -->

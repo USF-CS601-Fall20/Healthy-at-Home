@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.progress.ProgressFragment"
+    tools:context=".ProgressFragment"
     android:background="@color/skyBlue">
 
     <!-- Home Button -->
@@ -21,10 +21,10 @@
     <!-- Progress Text -->
     <TextView
         android:id="@+id/progressText"
-        android:layout_width="185dp"
-        android:layout_height="39dp"
+        android:layout_width="266dp"
+        android:layout_height="46dp"
         android:text="Progress Tracking"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
