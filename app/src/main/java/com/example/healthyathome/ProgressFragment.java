@@ -30,6 +30,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+/** ProgressFragment class representing the progress page. */
 public class ProgressFragment extends Fragment {
 
     private TextView absTotalCount;
@@ -43,7 +44,13 @@ public class ProgressFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private String userID;
 
-
+    /**
+     * Overrides the onCreateView method to display layout of the progress page.
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return View of the page
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -69,6 +76,11 @@ public class ProgressFragment extends Fragment {
         // Populate user data
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather user profile data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -84,6 +96,11 @@ public class ProgressFragment extends Fragment {
         documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("abs");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather abs data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -96,6 +113,11 @@ public class ProgressFragment extends Fragment {
         documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("arms");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather arms data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -108,6 +130,11 @@ public class ProgressFragment extends Fragment {
         documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("cardio");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather cardio data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -120,6 +147,11 @@ public class ProgressFragment extends Fragment {
         documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("chest");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather chest data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -132,6 +164,11 @@ public class ProgressFragment extends Fragment {
         documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("legs");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather legs data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -144,6 +181,11 @@ public class ProgressFragment extends Fragment {
         documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("shoulders");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather shoulders data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -152,11 +194,14 @@ public class ProgressFragment extends Fragment {
             }
         });
 
-
-
         // Abs Stats Button
         ImageButton absProgButton = (ImageButton) view.findViewById(R.id.absProgButton);
         absProgButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the abs stats button responsibility of
+             * navigating the user to the abs stats page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 StatsAbsFragment fragment = new StatsAbsFragment();
@@ -171,6 +216,11 @@ public class ProgressFragment extends Fragment {
         // Arms Stats Button
         ImageButton armsProgButton = (ImageButton) view.findViewById(R.id.armsProgButton);
         armsProgButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the arms stats button responsibility of
+             * navigating the user to the arms stats page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 StatsArmsFragment fragment = new StatsArmsFragment();
@@ -185,6 +235,11 @@ public class ProgressFragment extends Fragment {
         // Cardio Stats Button
         ImageButton cardioProgButton = (ImageButton) view.findViewById(R.id.cardioProgButton);
         cardioProgButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the cardio stats button responsibility of
+             * navigating the user to the cardio stats page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 StatsCardioFragment fragment = new StatsCardioFragment();
@@ -199,6 +254,11 @@ public class ProgressFragment extends Fragment {
         // Chest Stats Button
         ImageButton chestProgButton = (ImageButton) view.findViewById(R.id.chestProgButton);
         chestProgButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the chest stats button responsibility of
+             * navigating the user to the chest stats page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 StatsChestFragment fragment = new StatsChestFragment();
@@ -213,6 +273,11 @@ public class ProgressFragment extends Fragment {
         // Legs Stats Button
         ImageButton legsProgButton = (ImageButton) view.findViewById(R.id.legsProgButton);
         legsProgButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the legs stats button responsibility of
+             * navigating the user to the legs stats page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 StatsLegsFragment fragment = new StatsLegsFragment();
@@ -227,6 +292,11 @@ public class ProgressFragment extends Fragment {
         // Shoulders Stats Button
         ImageButton shouldersProgButton = (ImageButton) view.findViewById(R.id.shouldersProgButton);
         shouldersProgButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the shoulders stats button responsibility of
+             * navigating the user to the shoulders stats page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 StatsShouldersFragment fragment = new StatsShouldersFragment();
@@ -241,6 +311,12 @@ public class ProgressFragment extends Fragment {
         // Reset Progress Button
         Button resetProgressButton = (Button) view.findViewById(R.id.resetProgButton);
         resetProgressButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the reset progress button responsibility of
+             * resetting the user's overall progress. This is done by resetting all the values
+             * in the database back to 0 to start fresh.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 // Reset abs progress
@@ -303,6 +379,11 @@ public class ProgressFragment extends Fragment {
         // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the home button responsibility of navigating
+             * the user back to the application's home page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new HomeFragment();

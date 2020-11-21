@@ -24,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+/** RegisterActivity class representing the create account page. */
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText mUserName, mEmail, mPassword, mPhone;
@@ -32,6 +33,10 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private String userID;
 
+    /**
+     * Loads the registration activity for the user.
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +60,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Register Button
         registerButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Overrides the onClick method to handle the register button responsibilities of
+             * gathering user information data and determining if it is appropriate.
+             * @param view View
+             */
             @Override
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
@@ -80,6 +90,11 @@ public class RegisterActivity extends AppCompatActivity {
                 // Register user
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    /**
+                     * Overrides the onComplete method which determines if a registration was
+                     * successful and also stores the user's account information in the database.
+                     * @param task Task<AuthResult>
+                     */
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
@@ -95,11 +110,21 @@ public class RegisterActivity extends AppCompatActivity {
                             userMap.put("calories", "0");
 
                             documentReference.set(userMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * user registration.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: user profile created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * user registration.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -117,11 +142,21 @@ public class RegisterActivity extends AppCompatActivity {
                             absMap.put("reverseCrunches", "0");
                             absMap.put("russianTwist", "0");
                             documentReference.set(absMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * storing of abs data.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: abs data created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * storing of abs data.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -139,11 +174,21 @@ public class RegisterActivity extends AppCompatActivity {
                             armsMap.put("tricepsKickback", "0");
                             armsMap.put("lateralRaise", "0");
                             documentReference.set(armsMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * storing of arms data.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: arms data created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * storing of arms data.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -161,11 +206,21 @@ public class RegisterActivity extends AppCompatActivity {
                             cardioMap.put("run", "0");
                             cardioMap.put("sprint", "0");
                             documentReference.set(cardioMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * storing of cardio data.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: cardio data created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * storing of cardio data.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -183,11 +238,21 @@ public class RegisterActivity extends AppCompatActivity {
                             chestMap.put("lateralClimber", "0");
                             chestMap.put("pushup", "0");
                             documentReference.set(chestMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * storing of chest data.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: chest data created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * storing of chest data.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -205,11 +270,21 @@ public class RegisterActivity extends AppCompatActivity {
                             legsMap.put("lunges", "0");
                             legsMap.put("squats", "0");
                             documentReference.set(legsMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * storing of legs data.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: legs data created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * storing of legs data.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -228,11 +303,21 @@ public class RegisterActivity extends AppCompatActivity {
                             shouldersMap.put("shoulderShrug", "0");
                             shouldersMap.put("uprightRow", "0");
                             documentReference.set(shouldersMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                /**
+                                 * Overrides the onSuccess method to print success message for
+                                 * storing of shoulders data.
+                                 * @param aVoid Void
+                                 */
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("TAG", "success: shoulder data created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
+                                /**
+                                 * Overrides the onFailure method to print failure message for
+                                 * storing of shoulders data.
+                                 * @param e Exception
+                                 */
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("TAG", "failure: " + e.toString());
@@ -252,6 +337,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Already Registered Button
         alreadyRegButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Overrides the onClick method to handle the already registered button responsibility
+             * of navigating the user to the login page.
+             * @param view View
+             */
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), LoginActivity.class);

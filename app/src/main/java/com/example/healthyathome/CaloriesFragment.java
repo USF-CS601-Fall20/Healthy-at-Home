@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+/** CaloriesFragment class representing the calorie tracker page. */
 public class CaloriesFragment extends Fragment{
 
     private int calories;
@@ -33,6 +34,13 @@ public class CaloriesFragment extends Fragment{
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
 
+    /**
+     * Overrides the onCreateView method to display layout of the calories tracking page.
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return View of the page
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_calories, container, false);
@@ -46,6 +54,11 @@ public class CaloriesFragment extends Fragment{
         // Setup user's calorie count
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather calories data from database
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
@@ -59,6 +72,11 @@ public class CaloriesFragment extends Fragment{
         // Submit Calories Button
         Button submitCalories = (Button) view.findViewById(R.id.caloriesEntryButton);
         submitCalories.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Overrides the onClick method to handle the submit calories button responsibilities
+             * which include obtaining data and updating the database accordingly.
+             * @param view View
+             */
             @Override
             public void onClick(View view) {
                 String calorieSubmission = calorieSpinner.getSelectedItem().toString();
@@ -74,6 +92,11 @@ public class CaloriesFragment extends Fragment{
         // Reset Calories Button
         Button resetCalories = (Button) view.findViewById(R.id.resetCalButton);
         resetCalories.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Overrides the onClick method to handle the reset calories button responsibility
+             * of resetting calories count in the database to 0.
+             * @param view View
+             */
             @Override
             public void onClick(View view) {
                 DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
@@ -85,6 +108,11 @@ public class CaloriesFragment extends Fragment{
         // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the home button responsibility of navigating
+             * the user back to the application's home page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new HomeFragment();

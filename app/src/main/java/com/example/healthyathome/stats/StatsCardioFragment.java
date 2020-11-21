@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+/** StatsCardioFragment class representing the cardio stats page. */
 public class StatsCardioFragment extends Fragment{
 
     private TextView walkCount;
@@ -32,6 +33,13 @@ public class StatsCardioFragment extends Fragment{
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
 
+    /**
+     * Overrides the onCreateView method to display layout of the cardio stats page.
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return View of the page
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_stats_cardio, container, false);
@@ -49,6 +57,11 @@ public class StatsCardioFragment extends Fragment{
         DocumentReference documentReference = firebaseFirestore.collection("users")
                 .document(userID).collection("workouts").document("cardio");
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            /**
+             * Overrides the onEvent method to gather and display cardio data from database.
+             * @param value FirebaseFireStoneException
+             * @param error DocumentSnapshot
+             */
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 walkCount.setText(value.getString("walk"));
@@ -61,6 +74,11 @@ public class StatsCardioFragment extends Fragment{
         // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the home button responsibility of navigating
+             * the user back to the application's home page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new HomeFragment();

@@ -16,12 +16,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+/** LoginActivity class representing the login page. */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText mEmail, mPassword;
     private Button loginButton;
     private FirebaseAuth firebaseAuth;
 
+    /**
+     * Loads the login activity for the user.
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,11 @@ public class LoginActivity extends AppCompatActivity {
 
         // Login Button
         loginButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Overrides the onClick method to handle the login button responsibilities of
+             * navigating the user to the login page and checking if field are filled in correctly.
+             * @param view View
+             */
             @Override
             public void onClick(View view) {
 
@@ -58,6 +68,10 @@ public class LoginActivity extends AppCompatActivity {
                 // Authenticate User
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    /**
+                     * Overrides the onComplete method which determines if a login was successful.
+                     * @param task Task<AuthResult>
+                     */
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
@@ -75,6 +89,11 @@ public class LoginActivity extends AppCompatActivity {
         // Create Account Button
         Button createAccButton = (Button) findViewById(R.id.createAccButton);
         createAccButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Overrides the onClick method to handle the create account button responsibility of
+             * navigating the user to the create account page.
+             * @param view View
+             */
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), RegisterActivity.class);

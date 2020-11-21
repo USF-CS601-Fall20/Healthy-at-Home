@@ -21,8 +21,16 @@ import com.example.healthyathome.R;
 import com.example.healthyathome.ShouldersFragment;
 import com.example.healthyathome.HomeFragment;
 
+/** CategoriesFragment class representing the categories page. */
 public class CategoriesFragment extends Fragment {
 
+    /**
+     * Overrides the onCreateView method to display layout of the categories page.
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return View of the page
+     */
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
@@ -32,6 +40,11 @@ public class CategoriesFragment extends Fragment {
         // Home button
         ImageButton homeButton = (ImageButton) view.findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the home button responsibility of navigating
+             * the user back to the application's home page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new HomeFragment();
@@ -46,6 +59,11 @@ public class CategoriesFragment extends Fragment {
         // Abs
         Button buttonAbs = (Button)view.findViewById(R.id.absButton);
         buttonAbs.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the abs button responsibility of navigating
+             * the user to the abs exercise page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new AbsFragment();
@@ -60,6 +78,11 @@ public class CategoriesFragment extends Fragment {
         // Arms
         Button buttonBiceps = (Button)view.findViewById(R.id.armsButton);
         buttonBiceps.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the arms button responsibility of navigating
+             * the user to the arms exercise page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new ArmsFragment();
@@ -74,6 +97,11 @@ public class CategoriesFragment extends Fragment {
         // Cardio
         Button buttonCardio = (Button)view.findViewById(R.id.cardioButton);
         buttonCardio.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the cardio button responsibility of navigating
+             * the user to the cardio exercise page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new CardioFragment();
@@ -88,6 +116,11 @@ public class CategoriesFragment extends Fragment {
         // Chest
         Button buttonChest = (Button)view.findViewById(R.id.chestButton);
         buttonChest.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the chest button responsibility of navigating
+             * the user to the chest exercise page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new ChestFragment();
@@ -102,6 +135,11 @@ public class CategoriesFragment extends Fragment {
         // Legs
         Button buttonQuads = (Button)view.findViewById(R.id.legsButton);
         buttonQuads.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the legs button responsibility of navigating
+             * the user to the legs exercise page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new LegsFragment();
@@ -116,6 +154,11 @@ public class CategoriesFragment extends Fragment {
         // Shoulders
         Button buttonShoulders = (Button)view.findViewById(R.id.shoulderButton);
         buttonShoulders.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the shoulders button responsibility of navigating
+             * the user to the shoulders exercise page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new ShouldersFragment();

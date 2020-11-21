@@ -19,6 +19,7 @@ import com.example.healthyathome.ProgressFragment;
 
 import java.util.Random;
 
+/** HomeFragment class representing the home page. */
 public class HomeFragment extends Fragment {
 
     private String[] healthTips = new String[]{
@@ -30,6 +31,13 @@ public class HomeFragment extends Fragment {
             "Get plenty of sleep."
     };
 
+    /**
+     * Overrides the onCreateView method to display layout of the home page.
+     * @param inflater LayoutInflater
+     * @param container ViewGroup
+     * @param savedInstanceState Bundle
+     * @return View of the page
+     */
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -38,6 +46,11 @@ public class HomeFragment extends Fragment {
         TextView tipText = (TextView) view.findViewById(R.id.tipText);
         Button tipButton = (Button) view.findViewById(R.id.tipButton);
         tipButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the tip button responsibility of
+             * displaying a random health tip to the user.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Random random = new Random();
@@ -49,6 +62,11 @@ public class HomeFragment extends Fragment {
         // Categories Button
         Button categoriesButton = (Button) view.findViewById(R.id.categoriesButton);
         categoriesButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the categories button responsibility of
+             * navigating the user to the categories page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new CategoriesFragment();
@@ -63,6 +81,11 @@ public class HomeFragment extends Fragment {
         // Progress Button
         Button progressButton = (Button) view.findViewById(R.id.progressButton);
         progressButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the progress button responsibility of
+             * navigating the user to the progress page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new ProgressFragment();
@@ -77,6 +100,11 @@ public class HomeFragment extends Fragment {
         // Calories Button
         Button caloriesButton = (Button) view.findViewById(R.id.caloriesButton);
         caloriesButton.setOnClickListener(new View.OnClickListener(){
+            /**
+             * Overrides the onClick method to handle the calories button responsibility of
+             * navigating the user to the calories tracker page.
+             * @param v View
+             */
             @Override
             public void onClick(View v) {
                 Fragment fragment = new CaloriesFragment();

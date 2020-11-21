@@ -10,8 +10,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+/** MainActivity class representing the main activity of the application after logging in. */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Loads the home page for the user when the main activity is triggered.
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new HomeFragment());
     }
 
-    // Load particular fragment
+    /**
+     * Loads a particular page if possible.
+     * @param fragment Fragment
+     * @return boolean true or false
+     */
     public boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
@@ -30,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    // Logout and return to login page
+    /**
+     * Logs the user out of the application and returns to the login page.
+     * @param view View
+     */
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
